@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="36f79cd2-5ac6-4e5c-98e7-2af9becb8b50" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/CollectionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/CollectionsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/Loops.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/Loops.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/base/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/base/LoopsTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -13,12 +16,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Loops.java" pinned="false" current-in-tab="false">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="Loops.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/base/Loops.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="196">
-              <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="47" />
+            <state relative-caret-position="523">
+              <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
               <folding>
                 <element signature="e#56#57#0" expanded="true" />
                 <element signature="e#111#112#0" expanded="true" />
@@ -27,11 +30,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CollectionsTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CollectionsTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/base/CollectionsTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            <state relative-caret-position="110">
+              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ArrayPractice.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/ArrayPractice.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="484">
+              <caret line="72" column="43" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoopsTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/base/LoopsTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="17" />
             </state>
           </provider>
         </entry>
@@ -52,18 +73,20 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/base/loops.java" />
-        <option value="$PROJECT_DIR$/src/base/Loops.java" />
         <option value="$PROJECT_DIR$/src/base/Test.java" />
         <option value="$PROJECT_DIR$/src/base/ListTest.java" />
+        <option value="$PROJECT_DIR$/src/base/ArrayPractice.java" />
+        <option value="$PROJECT_DIR$/src/base/LoopsTest.java" />
         <option value="$PROJECT_DIR$/src/base/CollectionsTest.java" />
+        <option value="$PROJECT_DIR$/src/base/Loops.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="142" />
-    <option name="y" value="36" />
+    <option name="x" value="141" />
+    <option name="y" value="35" />
     <option name="width" value="1750" />
-    <option name="height" value="1104" />
+    <option name="height" value="1105" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -73,6 +96,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -95,9 +120,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -117,9 +140,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.CollectionsTest">
+  <component name="RunManager" selected="Application.ArrayPractice">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration name="ArrayPractice" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="base.ArrayPractice" />
+      <module name="learnJava" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="base.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
     </configuration>
     <configuration name="CollectionsTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="base.CollectionsTest" />
@@ -143,8 +177,8 @@
         </pattern>
       </extension>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="base.Test" />
+    <configuration name="LoopsTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="base.LoopsTest" />
       <module name="learnJava" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
@@ -197,13 +231,15 @@
     </configuration>
     <list>
       <item itemvalue="Application.Loops" />
-      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.LoopsTest" />
       <item itemvalue="Application.CollectionsTest" />
+      <item itemvalue="Application.ArrayPractice" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ArrayPractice" />
         <item itemvalue="Application.CollectionsTest" />
-        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.LoopsTest" />
         <item itemvalue="Application.Loops" />
       </list>
     </recent_temporary>
@@ -222,29 +258,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="0" />
       <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="bottom" id="Messages" order="0" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32973504" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
+      <window_info anchor="bottom" id="Run" order="6" visible="true" weight="0.32875368" />
       <window_info anchor="bottom" id="Version Control" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32968536" />
       <window_info anchor="bottom" id="Terminal" order="3" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1686198" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16845703" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="10" weight="0.3009576" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
@@ -254,20 +290,20 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="0" />
-      <window_info anchor="bottom" id="Find" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="7" weight="0.25" />
       <window_info anchor="right" id="Capture Analysis" order="2" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.32968536" />
+      <window_info anchor="bottom" id="Version Control" order="2" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info content_ui="combo" id="Project" order="5" visible="true" weight="0.22526042" />
       <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="6" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="bottom" id="Version Control" order="2" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.32968536" />
       <window_info id="Image Layers" order="0" />
       <window_info id="Designer" order="1" />
       <window_info id="UI Designer" order="2" />
+      <window_info anchor="bottom" id="Find" order="5" />
       <window_info active="true" anchor="bottom" id="Debug" order="10" visible="true" weight="0.39808482" />
       <window_info anchor="right" id="Palette&#9;" order="1" />
       <window_info anchor="bottom" id="Terminal" order="3" />
@@ -288,22 +324,34 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/base/Test.java</url>
-          <line>13</line>
-          <properties />
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/base/CollectionsTest.java</url>
-          <line>10</line>
+          <line>11</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="19" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/base/Loops.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="47" />
+          <folding>
+            <element signature="e#56#57#0" expanded="true" />
+            <element signature="e#111#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/CollectionsTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/base/Loops.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
@@ -315,28 +363,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/base/ArrayPractice.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="17" />
+        <state relative-caret-position="484">
+          <caret line="72" column="43" selection-start-line="72" selection-start-column="43" selection-end-line="72" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/base/Loops.java">
+    <entry file="file://$PROJECT_DIR$/src/base/LoopsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="47" />
-          <folding>
-            <element signature="e#56#57#0" expanded="true" />
-            <element signature="e#111#112#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="286">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/base/CollectionsTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="110">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/base/Loops.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="523">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#56#57#0" expanded="true" />
+            <element signature="e#111#112#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

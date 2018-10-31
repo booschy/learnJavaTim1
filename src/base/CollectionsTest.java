@@ -7,6 +7,7 @@ import java.util.*;
 public class CollectionsTest {
 
 
+
     public static void main(String[] args){
 
         listTest();
@@ -14,8 +15,8 @@ public class CollectionsTest {
         mapTest();
     }
 
-    
-    
+
+  
     private static void mapTest() {
     
         // create tree map (ordered keys)
@@ -46,6 +47,7 @@ public class CollectionsTest {
         
         keys.forEach(System.out::println);
     }
+
 
 
     private static void listTest() {
