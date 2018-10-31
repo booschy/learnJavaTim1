@@ -3,11 +3,15 @@ package base;
 public class Loops {
 
 
+    // constructor
     public Loops(){
+
         System.out.println("Loops constructor");
     }
 
 
+
+    // Instance method
     public void printSimpleArray(){
 
         int[] integersArray = new int[4];
@@ -23,8 +27,10 @@ public class Loops {
     }
 
 
+    // Class method
     public static String message(){
 
         return "Loops message";
     }
 }
+

@@ -6,12 +6,15 @@ import java.util.*;
 public class CollectionsTest {
 
 
+
     public static void main(String[] args){
 
         listTest();
 
         mapTest();
     }
+
+
 
     private static void mapTest() {
         TreeMap<Integer, String> mapOfString = new TreeMap<>();
@@ -38,6 +41,7 @@ public class CollectionsTest {
     }
 
 
+
     private static void listTest() {
         ArrayList<String> listOfStrings = new ArrayList<>();
 
@@ -53,3 +57,4 @@ public class CollectionsTest {
     }
 
 }
+

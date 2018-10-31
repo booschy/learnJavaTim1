@@ -1,6 +1,6 @@
 package base;
 
-public class Test {
+public class LoopsTest {
 
     public static void main(String... args){
 
