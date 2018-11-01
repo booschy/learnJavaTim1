@@ -48,6 +48,7 @@ public class CollectionsTest {
         }
 
 
+        // just as an example of declarative
         mapKeys.forEach(System.out::println);
     }
 
@@ -63,6 +64,7 @@ public class CollectionsTest {
         listOfStrings.add("second");
         listOfStrings.add("third");
         listOfStrings.add("third");
+
 
         // print items
         for (int i=0; i < listOfStrings.size(); i++){
