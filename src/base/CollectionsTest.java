@@ -1,6 +1,9 @@
 package base;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Set;
+import java.util.TreeMap;
 
 
 
@@ -30,22 +33,22 @@ public class CollectionsTest {
         // modify entry by key
         mapOfString.put(1, "newfirst");
 
-        // keys, values
+        // keys are stored in a Set because they are unique
         Set<Integer> mapKeys = mapOfString.keySet();
         System.out.println("Map keys: " + mapKeys);
-        
-        Set<Integer> mapValues = mapOfString.values();
+
+        // values are stored in a Collection
+        Collection<String> mapValues = mapOfString.values();
         System.out.println("Map values" + mapValues);
 
 
         // print all map "key : value"
-        for (int key : keys){
-
+        for (int key : mapKeys){
             System.out.println(key + " : " + mapOfString.get(key));
-       }
+        }
 
-        
-        keys.forEach(System.out::println);
+
+        mapKeys.forEach(System.out::println);
     }
 
 
