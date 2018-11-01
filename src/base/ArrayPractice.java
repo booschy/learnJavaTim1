@@ -80,7 +80,7 @@ public class ArrayPractice {
         // 1
         System.out.println("\nNumbers at odd indexes:");
         printNumbersAtOddIndexes(intArray);
-
+        
         // 2
         System.out.println("\nNegative numbers:");
         printNegativeNumbers(intArray);
