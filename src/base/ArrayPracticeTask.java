@@ -2,7 +2,7 @@ package base;
 
 import java.util.Arrays;
 
-public class ArrayPracticeHomework {
+public class ArrayPracticeTask {
 
     
     

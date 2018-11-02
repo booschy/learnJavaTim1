@@ -20,7 +20,6 @@ public class ArrayPractice {
 
     public static void printEvenNumbers(int[] intArray) {
 
-
         for (int i = 0; i < intArray.length; i++) {
 
             if (isEven(intArray[i])) {
@@ -32,7 +31,6 @@ public class ArrayPractice {
 
 
     public static void printOddNumbers(int[] intArray) {
-
 
         for (int i = 0; i < intArray.length; i++) {
 
@@ -61,7 +59,7 @@ public class ArrayPractice {
         int[] intArray = {2, 3, 4, 7, 99, 4, 120, 111, -5, -99, 55, 13, 29, 1, 0};
 
         // The size of an array can't be modified.
-        // This will not work because the intArray has a fixed length of 15.
+        // This will throw because the intArray has a fixed length of 15.
         // Uncomment to test it.
         // intArray[15] = 9; 
 
@@ -81,8 +79,7 @@ public class ArrayPractice {
         printNumbersAtOddIndexes(intArray);
 
         // 2
-        System.out.println("\nNegative numbers:");
-        printNegativeNumbers(intArray);
+        System.out.println("\nNegative numbers: " + Arrays.toString(getNegativeNumbers(intArray)));
 
         // 3
         System.out.println("\nNumbers bigger than 10:");
@@ -106,8 +103,9 @@ public class ArrayPractice {
     }
 
 
-    public static void printNegativeNumbers(int[] intArray) {
+    public static int[] getNegativeNumbers(int[] intArray) {
         // 2 Homework implementation
+        return new int[]{};
     }
 
 
@@ -129,3 +127,4 @@ public class ArrayPractice {
     }
 
 }
+

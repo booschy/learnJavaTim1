@@ -1,6 +1,7 @@
 package base;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -18,7 +19,7 @@ c) list.forEach(Consumer)
 */
 
 
-public class ListPractice{
+public class ListPracticeTask {
 
 
     public static void main(String[] args) {
@@ -30,27 +31,22 @@ public class ListPractice{
         System.out.println("List: " + integerList);
 
         // 1
-        System.out.println("\nEven numbers:");
-        printEvenNumbers(integerList);
+        System.out.println("\nEven numbers: " + getEvenNumbers(integerList));
 
         // 2
-        System.out.println("\nOdd numbers:");
-        printOddNumbers(integerList);
+        System.out.println("\nOdd numbers: " + getOddNumbers(integerList));
 
         // 3
         System.out.println("\nArray elements sum: " + sum(integerList));
 
         // 4
-        System.out.println("\nNumbers at odd indexes:");
-        printNumbersAtOddIndexes(integerList);
+        System.out.println("\nNumbers at odd indexes: " + getNumbersAtOddIndexes(integerList));
 
         // 5
-        System.out.println("\nNegative numbers:");
-        printNegativeNumbers(integerList);
+        System.out.println("\nNegative numbers: " + getNegativeNumbers(integerList));
 
         // 6
-        System.out.println("\nNumbers bigger than 10:");
-        printNumbersBiggerThan10(integerList);
+        System.out.println("\nNumbers bigger than 10: " + getNumbersBiggerThan10(integerList));
 
         // 7
         System.out.println(String.format(
@@ -65,13 +61,15 @@ public class ListPractice{
 
 
 
-    public static void printEvenNumbers(List<Integer> integerList) {
+    public static List<Integer> getEvenNumbers(List<Integer> integerList) {
         // 1
+        return Collections.emptyList();
     }
 
 
-    public static void printOddNumbers(List<Integer> integerList) {
+    public static List<Integer> getOddNumbers(List<Integer> integerList) {
         // 2
+        return Collections.emptyList();
     }
 
 
@@ -81,18 +79,21 @@ public class ListPractice{
     }
 
 
-    public static void printNumbersAtOddIndexes(List<Integer> integerList) {
+    public static List<Integer> getNumbersAtOddIndexes(List<Integer> integerList) {
         // 4
+        return Collections.emptyList();
     }
 
 
-    public static void printNegativeNumbers(List<Integer> integerList) {
+    public static List<Integer> getNegativeNumbers(List<Integer> integerList) {
         // 5
+        return Collections.emptyList();
     }
 
 
-    public static void printNumbersBiggerThan10(List<Integer> integerList) {
+    public static List<Integer> getNumbersBiggerThan10(List<Integer> integerList) {
         // 6
+        return Collections.emptyList();
     }
 
 
