@@ -1,7 +1,6 @@
 package base;
 
 import java.util.Arrays;
-import java.util.Set;
 
 public class ArrayPractice {
 
@@ -80,7 +79,7 @@ public class ArrayPractice {
         // 1
         System.out.println("\nNumbers at odd indexes:");
         printNumbersAtOddIndexes(intArray);
-        
+
         // 2
         System.out.println("\nNegative numbers:");
         printNegativeNumbers(intArray);
