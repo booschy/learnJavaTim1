@@ -1,7 +1,10 @@
 package base;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import static base.ArrayPractice.*;
 
 
 /* REQUIREMENTS:
@@ -24,8 +27,15 @@ public class ListPractice{
     public static void main(String[] args) {
 
         // 0
-        List<Integer> integerList =  new ArrayList<>();
-        // { 2, 3, 4, 7, 99, 4, 120, 111, -5, -99, 55, 13, 29, 1, 0 };
+        /*Integer[] intArray =  { 2, 3, 4, 7, 99, 4, 120, 111, -5, -99, 55, 13, 29, 1, 0 };
+        List<Integer> integerList = Arrays.asList(intArray);*/
+
+        List<Integer> integerList = Arrays.asList(
+                2, 3, 4, 7, 99, 4, 120, 111,
+                -5, -99, 55, 13, 29, 1, 0);
+
+
+
 
         System.out.println("List: " + integerList);
 
@@ -38,7 +48,7 @@ public class ListPractice{
         printOddNumbers(integerList);
 
         // 3
-        System.out.println("\nArray elements sum: " + sum(integerList));
+        System.out.println("\nList elements sum: " + sum(integerList));
 
         // 4
         System.out.println("\nNumbers at odd indexes:");
@@ -67,29 +77,60 @@ public class ListPractice{
 
     public static void printEvenNumbers(List<Integer> integerList) {
         // 1
+        for (int i = 0; i < integerList.size(); i++) {
+
+            int currentElement = integerList.get(i);
+
+            if(isEven(currentElement)){
+                 System.out.println(currentElement);
+             }
+
+        }
     }
+
 
 
     public static void printOddNumbers(List<Integer> integerList) {
         // 2
+        for (int i = 0; i < integerList.size(); i++) {
+
+            int currentElement = integerList.get(i);
+
+            if(isOdd(currentElement)){
+                System.out.println(currentElement);
+            }
+        }
     }
 
 
-    private static int sum(List<Integer> integerList) {
+    public static int sum(List<Integer> integerList) {
         // 3
-        return 0;
-    }
+        int sum = 0;
+        for (int i = 0; i < integerList.size(); i++) {
 
+            sum += integerList.get(i);
+
+        }
+        return sum;
+    }
 
     public static void printNumbersAtOddIndexes(List<Integer> integerList) {
         // 4
+        for (int i = 0; i < integerList.size(); i++) {
+            if(! isEven(i)){
+                System.out.println(integerList.get(i));
+            }
+        }
     }
-
 
     public static void printNegativeNumbers(List<Integer> integerList) {
         // 5
+        for(int element : integerList){
+            if(element < 0){
+                System.out.println(element);
+            }
+        }
     }
-
 
     public static void printNumbersBiggerThan10(List<Integer> integerList) {
         // 6
@@ -98,7 +139,10 @@ public class ListPractice{
 
     public static float average(List<Integer> integerList) {
         // 7
-        return 0;
+        if(integerList.size() == 0){
+            return 0;
+        }
+        return (float) sum(integerList) / integerList.size();
     }
 
 

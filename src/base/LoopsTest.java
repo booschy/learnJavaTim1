@@ -2,9 +2,8 @@ package base;
 
 public class LoopsTest {
 
-    public static void main(String... args){
-
-        String  name = "SDA";
+    public static void main(String... args) {
+        String name = "SDA";
 
         // instance (object) method
         Loops loop = new Loops();

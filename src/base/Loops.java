@@ -21,7 +21,6 @@ public class Loops {
         integersArray[2] = 2;
         integersArray[3] = 3;
 
-
         for(int i=0; i < integersArray.length; i++){
             System.out.println(integersArray[i]);
         }
