@@ -1,5 +1,7 @@
 package base;
 
+import enumsPractice.NumbersEnum;
+
 import java.util.Arrays;
 
 public interface ArrayPractice {

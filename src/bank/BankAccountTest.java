@@ -7,7 +7,7 @@ public class BankAccountTest {
 
         Person employee1 = new Person(
                 "John",
-                Employer.BRD,
+                Employer.IBM,
                 "Timisoara"
         );
 
@@ -21,7 +21,6 @@ public class BankAccountTest {
                 100000,
 
                 1111);
-
         System.out.println(johnsAccount);
 
     }

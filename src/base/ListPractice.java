@@ -2,6 +2,7 @@ package base;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 import static base.ArrayPractice.*;
@@ -33,8 +34,6 @@ public class ListPractice{
         List<Integer> integerList = Arrays.asList(
                 2, 3, 4, 7, 99, 4, 120, 111,
                 -5, -99, 55, 13, 29, 1, 0);
-
-
 
 
         System.out.println("List: " + integerList);
@@ -89,7 +88,6 @@ public class ListPractice{
     }
 
 
-
     public static void printOddNumbers(List<Integer> integerList) {
         // 2
         for (int i = 0; i < integerList.size(); i++) {
@@ -114,6 +112,7 @@ public class ListPractice{
         return sum;
     }
 
+
     public static void printNumbersAtOddIndexes(List<Integer> integerList) {
         // 4
         for (int i = 0; i < integerList.size(); i++) {
@@ -123,6 +122,7 @@ public class ListPractice{
         }
     }
 
+
     public static void printNegativeNumbers(List<Integer> integerList) {
         // 5
         for(int element : integerList){
@@ -131,6 +131,7 @@ public class ListPractice{
             }
         }
     }
+
 
     public static void printNumbersBiggerThan10(List<Integer> integerList) {
         // 6

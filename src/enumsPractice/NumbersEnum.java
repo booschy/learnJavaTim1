@@ -1,4 +1,4 @@
-package base;
+package enumsPractice;
 
 
 public enum NumbersEnum {

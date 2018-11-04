@@ -2,12 +2,14 @@ package bank;
 
 public enum Employer {
 
-    CocaCola,
+    Consignor,
 
     IBM,
 
+    Azets,
+
     Visma,
 
-    BRD;
+    Unknown;
 
 }
