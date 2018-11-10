@@ -1,5 +1,6 @@
 package bank;
 
+import org.junit.jupiter.api.Test;
 import utils.FileUtils;
 
 import java.io.IOException;
@@ -7,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -40,7 +42,7 @@ public class Person {
 
 
     @Override
-    public String toString(){
+    public String toString() {
 
         return String.format(
                 "\nName: %s\nEmployer: %s\nLocation: %s",
@@ -70,7 +72,7 @@ public class Person {
     }
 
 
-    public static Person stringToPerson(String text){
+    public static Person stringToPerson(String text) {
 
         // text = "Anda, Bucuresti,   Visma"
         String[] textTokens = text.split(separatoRegex);
@@ -82,7 +84,7 @@ public class Person {
         // Employer.valueOf("Visma") ---> returns Employer.Visma
         Employer employer = Employer.valueOf(textTokens[2]);
 
-        return new Person(name, employer,  location);
+        return new Person(name, employer, location);
     }
 
 
@@ -92,9 +94,9 @@ public class Person {
 
         List<String> nonEmptyLines = FileUtils.extractNonEmptyLines(fileLines);
 
-        List<Person> personList =  new ArrayList<>();
+        List<Person> personList = new ArrayList<>();
 
-        for(String line : nonEmptyLines){
+        for (String line : nonEmptyLines) {
 
             Person currentPerson = stringToPerson(line);
             personList.add(currentPerson);
@@ -108,9 +110,9 @@ public class Person {
 
         List<Person> timisoaraEmployees = new ArrayList<>();
 
-        for(Person person : personList){
+        for (Person person : personList) {
 
-            if(person.location.equals(location)){
+            if (person.location.equals(location)) {
                 timisoaraEmployees.add(person);
             }
         }
@@ -123,9 +125,9 @@ public class Person {
 
         List<Person> employees = new ArrayList<>();
 
-        for(Person person : personList){
+        for (Person person : personList) {
 
-            if(person.employer.equals(employer)){
+            if (person.employer.equals(employer)) {
                 employees.add(person);
             }
         }
@@ -141,9 +143,9 @@ public class Person {
 
         List<Person> employees = new ArrayList<>();
 
-        for(Person person : personList){
+        for (Person person : personList) {
 
-            if(person.employer.equals(employer) && person.location.equals(location)){
+            if (person.employer.equals(employer) && person.location.equals(location)) {
                 employees.add(person);
             }
         }
@@ -177,7 +179,7 @@ public class Person {
         }*/
 
         String finalText = "";
-        for(Person person : employesFromVismaTimisora){
+        for (Person person : employesFromVismaTimisora) {
             finalText += person.toString() + "\n";
         }
 
@@ -188,6 +190,31 @@ public class Person {
                 "employeesFromVismaTimisoara.txt");
 
         Files.write(outFilePath, finalText.getBytes());
+
+
+        // SORT
+
+        System.out.println("\n*** Sorted ***");
+
+        List<Person> personListSorted = new ArrayList<>();
+        personListSorted.addAll(personList);
+
+        Collections.sort(
+
+                personListSorted,
+
+                new Comparator<Person>() {
+
+                    @Override
+                    public int compare(Person p1, Person p2) {
+                        return p1.getName().compareTo(p2.getName());
+                    }
+                });
+
+
+        personListSorted.forEach(System.out::println);
     }
+
+
 
 }

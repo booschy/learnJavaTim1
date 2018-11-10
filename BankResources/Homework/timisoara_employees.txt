@@ -22,4 +22,3 @@ Marcel, Timisoara: Azets
 Maria, Timisoara, IBM
 Adela,  Timisoara , Azets
 Ovidiu, Timisoara, Consignor
-

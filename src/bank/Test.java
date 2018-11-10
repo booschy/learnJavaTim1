@@ -18,10 +18,7 @@ public class Test {
 
         System.out.println(System.getProperty("test"));
         System.out.println(System.getProperty("name"));
-        //TODO move to separate files
-/*        testFileUtils();
 
-        throwablesTest();*/
 
 /*        List<String> employeesLines = fileLinesToList(
                 BankResources.name(),

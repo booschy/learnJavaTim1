@@ -37,11 +37,18 @@ GOOD LUCK!
 
 */
 
+
+import java.util.Arrays;
+
+
 public class Homework {
 
 
     public static void main(String[] args) {
+        String text = "dog,cat,mouse";
 
+        String[] textTokens = text.split(",");
+        System.out.println(Arrays.toString(textTokens));
         // implement flow here
         // put any additional functions also in this class
     }
