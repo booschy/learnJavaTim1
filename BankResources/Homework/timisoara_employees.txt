@@ -7,7 +7,6 @@ Mihaela, Timisoara, IBM
 Alina, Timisoara, Visma
 Mircea, Timisoara. Azets
 Andrei, Timisoara, Azets
-
 Petre, Timisoara, Consignor
 Nicoleta, Timisoara, IBM
 George, Timisoara, Azets
@@ -16,7 +15,6 @@ Mirela, Timisoara, Visma
 Marius; Timisoara, Azets
 Raluca , Timisoara, Consignor
 Anda, Timisoara, Visma
-
 Tania, Timisoara, Consignor
 Marcel, Timisoara: Azets
 Maria, Timisoara, IBM

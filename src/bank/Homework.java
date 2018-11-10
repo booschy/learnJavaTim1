@@ -1,56 +1,75 @@
 package bank;
 
+import static bank.Persons.fileToPersonList;
 
-/*
+import org.junit.jupiter.api.Test;
+import utils.FileUtils;
 
-Using user.dir/BankResources/Homework/timisoara_employees.txt,
-
-create an output file user.dir/BankResources/Homework/timisoara_employees_statistics.txt
-
-that will contain the following text:
-
-
-"Timisoara IT companies employee statistics:
-
-Azets: 6
-
-Consignor: 7
-
-IBM: 4
-
-Visma: 5"
-
-
-TIPS:
-
-You can find useful info in bank.Person class.
-You can reuse any already created code.
-
-Step1 - deserialize file to a list of Persons; be careful of the multiple separators
-
-Step2 - create a function that has the Employer as a parameter and returns the employees count
-
-Step3 - get statistics and write them to the output file.
-
-
-GOOD LUCK!
-
-*/
-
-
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Arrays;
+import java.util.List;
 
 
 public class Homework {
 
+    @Test
+    public void test_homework() throws IOException {
 
-    public static void main(String[] args) {
-        String text = "dog,cat,mouse";
+        // step 1
+        // user.dir/BankResources/Homework/timisoara_employees.txt
+        List<Person> personList = fileToPersonList(
+                ResourceDirectories.BankResources.name(),
+                ResourceDirectories.Homework.name(),
+                "timisoara_employees.txt");
 
-        String[] textTokens = text.split(",");
-        System.out.println(Arrays.toString(textTokens));
-        // implement flow here
-        // put any additional functions also in this class
+        //personList.forEach(System.out::println);
+
+        // step 2 + 3
+        String statistics = "Timisoara IT companies employee statistics:\n"
+                + getStatistics(personList);
+
+        //System.out.println(statistics);
+
+        Path outputFilePath = FileUtils.getLocalPath(
+                ResourceDirectories.BankResources.name(),
+                ResourceDirectories.Homework.name(),
+                "timisoara_employees_statistics.txt");
+
+        Files.write(outputFilePath, statistics.getBytes());
     }
 
+
+    // step 2
+    public static int countEmployees(List<Person> peronList, Employer employer){
+
+        int count = 0;
+
+        for( Person currentPerson : peronList){
+
+            if(currentPerson.getEmployer().equals(employer)){
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+
+    // step 3
+    public static String getStatistics(List<Person> personList){
+
+        String statistics = "";
+        List<Employer> employers = Arrays.asList(Employer.values());
+
+        for(Employer currentEmployer : employers){
+
+            int employerCount = countEmployees(personList, currentEmployer);
+            statistics += "\n" + currentEmployer.name() + ": " + employerCount + "\n";
+        }
+
+
+        return statistics;
+    }
 }

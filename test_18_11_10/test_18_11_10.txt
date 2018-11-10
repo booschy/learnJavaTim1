@@ -84,8 +84,11 @@ Using current project (learnJava) complete the following tasks:
 10 POINTS
 
 
-
 TOTAL 100 POINTS
 
 GOOD LUCK TEAMS!
 
+EXTRA TASK (Homework for 11.11.18)
+Generate a map from the persons list with key = year, value = list of names.
+
+Map<Integer, List<String>

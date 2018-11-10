@@ -50,6 +50,8 @@ public class ThrowablesTest {
 
         // not reachable without try/catch
         System.out.println("END test_unchecked_exceptions");
+
+        //throw new AssertionError("wanted error");
     }
 
 }

@@ -1,0 +1,11 @@
+Timisoara IT companies employee statistics:
+
+Consignor: 7
+
+IBM: 4
+
+Azets: 6
+
+Visma: 5
+
+Unknown: 0
