@@ -1,2 +1,2 @@
 # learnJava
-java startup repository
+Java Fundamentals Practice - repository for SDA training.
