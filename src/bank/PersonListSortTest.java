@@ -29,15 +29,18 @@ public class PersonListSortTest {
     public void sort_by_location() {
 
         Collections.sort(
+
                 personList,
+
                 // CompareByLocation
                 new Comparator<Person>() {
 
                     @Override
                     public int compare(Person p1, Person p2) {
+
                         return p1.getLocation().compareTo(p2.getLocation());
                     }
-                });
+                }); // (p1, p2) -> p1.getLocation().compareTo(p2.getLocation());
 
         print(personList);
     }
@@ -80,19 +83,23 @@ public class PersonListSortTest {
 
 
         List<String> namesList = Arrays.asList(s1, s2, "Maria", "Dorina");
+
         Collections.sort(namesList);  // String implements Comparable<String>
+        // https://docs.oracle.com/javase/8/docs/api/java/lang/Comparable.html
         System.out.print(namesList);
     }
 
 
     @Test
-    public void compare_by_name_location_employee(){
+    public void compare_by_employer_location_name(){
 
         Collections.sort(
                 personList,
-                new CompareByName()
-                    .thenComparing(new CompareByEmployer())
-                    .thenComparing(new CompareByLocation()));
+                new CompareByEmployer()
+
+                    .thenComparing(new CompareByLocation())
+
+                    .thenComparing(new CompareByName()));
 
         print(personList);
     }

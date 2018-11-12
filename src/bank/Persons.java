@@ -12,7 +12,7 @@ public interface Persons {
 
     public static final String separatoRegex = "\\s*(,|\\.|;|:)\\s*";
 
-
+    //  https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html
     public static class CompareStrings implements Comparator<String> {
 
         @Override
@@ -88,6 +88,12 @@ public interface Persons {
     }
 
 
+    /**
+     *
+     * @param more
+     * @return
+     * @throws IOException
+     */
     public static List<Person> fileToPersonList(String... more) throws IOException {
 
         List<String> fileLines = FileUtils.fileLinesToList(more);
@@ -106,6 +112,11 @@ public interface Persons {
     }
 
 
+    // Semnatura metodei
+    // Modificator de acces - public
+    // Tip - static
+    // Returned value: List<Person>
+    // Input - parameters - List<Person> personList, String location
     public static List<Person> getEmployees(List<Person> personList, String location) {
 
         List<Person> employees = new ArrayList<>();

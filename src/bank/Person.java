@@ -2,6 +2,7 @@ package bank;
 
 import static bank.Persons.*;
 
+import org.junit.jupiter.api.Test;
 import utils.FileUtils;
 
 import java.io.IOException;
@@ -10,8 +11,6 @@ import java.nio.file.Path;
 import java.util.*;
 
 public class Person {
-
-
 
 
     private String name;
@@ -27,6 +26,18 @@ public class Person {
         this.employer = employer;
         this.location = location;
     }
+
+
+    // overwrite constructor
+    public Person(String name) {
+
+        this(name, Employer.Unknown, "");
+
+//        this.name = name;
+//        this.employer = Employer.Unknown;
+//        this.location = "";
+    }
+
 
 
     @Override
@@ -124,10 +135,12 @@ public class Person {
     }
 
 
-    public static void main(String[] args) throws IOException {
+
+    public static void main(String[] args) {
+
+        System.out.println(new Person("Mihaela"));
 
     }
-
 
 
 
