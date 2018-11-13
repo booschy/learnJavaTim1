@@ -8,7 +8,9 @@ import fundamentals.utils.FileUtils;
 import java.io.IOException;
 import java.util.*;
 
+
 public class Winner {
+
 
     @Test
     public void test_array_vs_varargs() {
@@ -42,10 +44,12 @@ public class Winner {
         }
     }
 
+
     public void printNumbers(Integer[] numbers){
 
         printArray(numbers);
     }
+
 
     public void printNumbersVarargs(Integer... numbers){
 
@@ -58,6 +62,7 @@ public class Winner {
         printArray(numbers);
     }
 
+
     private void printArray(String[] strings) {
 
         printArray(strings);
@@ -66,6 +71,7 @@ public class Winner {
             System.out.print(numbers[i] + ", ");
         }*/
     }
+
 
     private List<String> getParticipants() throws IOException {
 
@@ -76,6 +82,7 @@ public class Winner {
         );
     }
 
+
     private List<String> getAbsents() throws IOException {
 
         return FileUtils.fileLinesToList(
@@ -85,6 +92,7 @@ public class Winner {
         );
     }
 
+
     @Test
     public void test_get_participants_and_absents() throws IOException {
 
@@ -92,6 +100,16 @@ public class Winner {
         System.out.println("Absents: " + getAbsents());
     }
 
+
+    private String getWinner(List<String> participants) {
+
+        //System.out.println("Participants: " + participants.size());
+
+        Collections.shuffle(participants,
+                new Random(System.currentTimeMillis()));
+
+        return participants.remove(0);
+    }
 
 
     @Test
@@ -120,16 +138,6 @@ public class Winner {
         }
 
         printArray(winners);
-    }
-
-    private String getWinner(List<String> participants) {
-
-        //System.out.println("Participants: " + participants.size());
-
-        Collections.shuffle(participants,
-            new Random(System.currentTimeMillis()));
-
-        return participants.remove(0);
     }
 
 }
