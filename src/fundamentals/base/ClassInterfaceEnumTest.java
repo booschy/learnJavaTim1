@@ -6,8 +6,12 @@ public enum ClassInterfaceEnumTest {
     one,
     two;
 
+
     public static void main(String[] args) {
 
-        System.out.println(one.name());
+        for(ClassInterfaceEnumTest enumValue : values()){
+
+            System.out.println(enumValue);
+        }
     }
 }

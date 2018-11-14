@@ -17,8 +17,7 @@ public class ArrayPracticeTask {
         return number % 2 != 0;
         // return ( ! isEven(number))
     }
-    
-    
+
         
     public static void printEvenNumbers(int[] intArray) {
         
@@ -32,8 +31,7 @@ public class ArrayPracticeTask {
         }
     }
     
-    
-    
+
     public static void printOddNumbers(int[] intArray) {
         
         
@@ -45,8 +43,7 @@ public class ArrayPracticeTask {
             } 
         }
     }
-    
-    
+
     
     private static int sum(int[] intArray) {
         
@@ -58,8 +55,7 @@ public class ArrayPracticeTask {
         
         return sum;
     }
-    
-    
+
     
     public static void main(String[] args) {
         
@@ -105,13 +101,11 @@ public class ArrayPracticeTask {
     }
 
 
-
     // Homework: implement following methods
     
     public static void printNumbersAtOddIndexes(int[] intArray) {
         // 1 Homework implementation        
     }
-
     
     
     public static void printNegativeNumbers(int[] intArray) {
@@ -119,11 +113,9 @@ public class ArrayPracticeTask {
     }
 
     
-    
     public static void printNumbersBiggerThan10(int[] intArray) {
         // 3 Homework implementation
     }
-    
     
     
     public static float average(int[] intArray) {
@@ -132,7 +124,6 @@ public class ArrayPracticeTask {
         return 0; 
     }
 
-    
     
     public static float positiveElementsAverage(int[] intArray) {
         // 5 Homework implementation

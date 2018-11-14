@@ -105,7 +105,7 @@ public interface ArrayPractice {
         System.out.println("\nNumbersEnum.first value: " + NumbersEnum.first.getValue());
 
         String enumMember = "second";
-        System.out.println("\nNumbersEnum.first value from string: "
+        System.out.println("\nNumbersEnum.first value from string \"second\": "
 
                 + NumbersEnum.valueOf(enumMember).getValue());
     }
@@ -113,6 +113,7 @@ public interface ArrayPractice {
 
     // Homework: implement following methods
     public static void printNumbersAtOddIndexes(int[] intArray) {
+
         // 1 Homework implementation
         for (int i = 0; i < intArray.length; i++) {
             if(isOdd(i)) {
@@ -128,12 +129,10 @@ public interface ArrayPractice {
         int[] finalArray = new int[intArray.length];
         int finalArrayIndex = 0;
 
-        for (int i = 0; i < intArray.length; i++) {
+        for (int number : intArray) {
 
-            int currentElement = intArray[i];
-
-            if(currentElement < 0){
-                finalArray[finalArrayIndex++] = currentElement;
+            if(number < 0){
+                finalArray[finalArrayIndex++] = number;
             }
         }
 

@@ -10,7 +10,6 @@ public class Loops {
     }
 
 
-
     // Instance method
     public void printSimpleArray(){
 

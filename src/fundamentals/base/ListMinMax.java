@@ -56,5 +56,4 @@ public class ListMinMax {
         System.out.println("MAX: " + max);
     }
 
-
 }

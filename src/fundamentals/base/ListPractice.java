@@ -1,5 +1,6 @@
 package fundamentals.base;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -145,9 +146,22 @@ public class ListPractice{
     }
 
 
+    public static List<Integer> getPositives(List<Integer> integerList){
+
+        List<Integer> positives = new ArrayList<>();
+        for (int number : integerList){
+            if(number >= 0){
+                positives.add(number);
+            }
+        }
+
+        return positives;
+    }
+
+
     public static float positiveElementsAverage(List<Integer> integerList) {
         // 8
-        return 0;
+        return average(getPositives(integerList));
     }
 
 }

@@ -2,7 +2,7 @@ package fundamentals.base;
 
 import org.junit.jupiter.api.Test;
 
-public class ThrowablesTest {
+public class Throwables {
 
 
     @Test
