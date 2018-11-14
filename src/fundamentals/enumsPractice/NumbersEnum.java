@@ -3,11 +3,11 @@ package fundamentals.enumsPractice;
 
 public enum NumbersEnum {
 
-    first(1),
+    FIRST(1),
 
-    second(2),
+    SECOND(2),
 
-    third(3);
+    THIRD(3);
 
     private int value;
 

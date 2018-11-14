@@ -4,6 +4,9 @@ import fundamentals.enumsPractice.NumbersEnum;
 
 import java.util.Arrays;
 
+import static fundamentals.enumsPractice.NumbersEnum.FIRST;
+
+
 public interface ArrayPractice {
 
 
@@ -101,8 +104,8 @@ public interface ArrayPractice {
 
         // 6
         // Enum test
-        System.out.println("\nNumbersEnum.first name: " + NumbersEnum.first.name());
-        System.out.println("\nNumbersEnum.first value: " + NumbersEnum.first.getValue());
+        System.out.println("\nNumbersEnum.first name: " + FIRST.name());
+        System.out.println("\nNumbersEnum.first value: " + FIRST.getValue());
 
         String enumMember = "second";
         System.out.println("\nNumbersEnum.first value from string \"second\": "

@@ -3,8 +3,9 @@ package fundamentals.base;
 // also can use class/interface
 public enum ClassInterfaceEnumTest {
 
-    one,
-    two;
+    ONE,
+
+    TWO;
 
 
     public static void main(String[] args) {
