@@ -1,7 +1,5 @@
 package fundamentals.bank;
 
-import static fundamentals.bank.Persons.*;
-
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -10,6 +8,8 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+
+import static fundamentals.bank.Persons.*;
 
 
 public class PersonListSortTest {

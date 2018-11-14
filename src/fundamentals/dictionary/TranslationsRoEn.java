@@ -1,16 +1,16 @@
 package fundamentals.dictionary;
 
-import static fundamentals.dictionary.Translations.*;
-import static org.junit.jupiter.api.Assertions.*;
-
 import fundamentals.bank.ResourceDirectories;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import static fundamentals.utils.FileUtils.*;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
+
+import static fundamentals.dictionary.Translations.*;
+import static fundamentals.utils.FileUtils.fileLinesToList;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class TranslationsRoEn {

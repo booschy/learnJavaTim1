@@ -1,13 +1,17 @@
 package fundamentals.bank;
 
-import static fundamentals.bank.Persons.*;
-
 import fundamentals.utils.FileUtils;
 
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+import static fundamentals.bank.Persons.fileToPersonList;
+import static fundamentals.bank.Persons.getEmployees;
 
 public class Person {
 

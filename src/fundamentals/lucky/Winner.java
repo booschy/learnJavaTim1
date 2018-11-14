@@ -1,13 +1,15 @@
 package fundamentals.lucky;
 
-import static fundamentals.utils.ArrayUtils.printArray;
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.Test;
 import fundamentals.utils.FileUtils;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Collections;
+import java.util.List;
+import java.util.Random;
+
+import static fundamentals.utils.ArrayUtils.printArray;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
 public class Winner {

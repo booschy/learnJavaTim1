@@ -4,7 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static fundamentals.base.ArrayPractice.*;
+import static fundamentals.base.ArrayPractice.isEven;
+import static fundamentals.base.ArrayPractice.isOdd;
 
 
 /* REQUIREMENTS:

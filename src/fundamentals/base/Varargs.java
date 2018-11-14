@@ -1,8 +1,8 @@
 package fundamentals.base;
 
-import static fundamentals.utils.ArrayUtils.printArray;
-
 import org.junit.jupiter.api.Test;
+
+import static fundamentals.utils.ArrayUtils.printArray;
 
 
 public class Varargs {
