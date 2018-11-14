@@ -10,7 +10,7 @@ import java.util.List;
 public interface FileUtils {
 
 
-    public static Path getLocalPath(String... more) {
+    static Path getLocalPath(String... more) {
 
         return Paths.get(
                 System.getProperty("user.dir"),
@@ -18,20 +18,15 @@ public interface FileUtils {
     }
 
 
-    public static List<String> fileLinesToList(String... more) throws IOException {
+    static List<String> fileLinesToList(String... more) throws IOException {
 
         Path employeesFullPath = getLocalPath(more);
 
-        List<String> fileLines = Files.readAllLines(employeesFullPath);
-
-        return fileLines;
-
-        // oneline
-        //return   Files.readAllLines(getLocalPath(more));
+        return Files.readAllLines(getLocalPath(more));
     }
 
 
-    public static List<String> extractNonEmptyLines(List<String> linesList) {
+    static List<String> extractNonEmptyLines(List<String> linesList) {
 
         List<String> nonEmptyLinesList = new ArrayList<>();
 
