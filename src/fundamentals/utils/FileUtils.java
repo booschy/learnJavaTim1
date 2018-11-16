@@ -20,9 +20,9 @@ public interface FileUtils {
 
     static List<String> fileLinesToList(String... more) throws IOException {
 
-        Path employeesFullPath = getLocalPath(more);
+        Path fileFullPath = getLocalPath(more);
 
-        return Files.readAllLines(getLocalPath(more));
+        return Files.readAllLines(fileFullPath);
     }
 
 
