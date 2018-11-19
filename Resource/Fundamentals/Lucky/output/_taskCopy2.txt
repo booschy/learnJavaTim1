@@ -1,0 +1,2 @@
+Create an application that will generate random the first 3 winners from a list of possible participants
+(participants.txt) after excluding the absents (absents.txt). Print the winners.
