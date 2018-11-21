@@ -1,0 +1,26 @@
+// book name | author | year | genre | price | quantity
+
+The Hunger Games | Suzanne Collins | 2008 | FICTION | 11.25 $ | 20
+
+Twilight | Stephenie Meyer | 2006 | Fiction | 9.49 $ | 25
+
+Pride and Prejudice | Jane Austen | 2000 | romance | 7.85 $ | 5
+
+Hopeless | Colleen Hoover | 2012 | Romance | 10.5 $ | 30
+
+Beautiful Disaster | Jamie McGuire | 2011 | romance | 12.34 $ | 20
+
+The Girl with the Dragon Tattoo | Stieg Larsson | 2008 | Mystery | 20 $ | 9
+
+And Then There Were None | Agatha Christie | 2004 | mystery | 6.4 $ | 13
+
+Shutter Island | Dennis Lehane | 2004 | MISTERY | 11.3 $ | 7
+
+Charlotte's Web | E.B. White | 2001 | Children | 6.29 $ | 40
+
+A Wrinkle in Time | Madeleine L'Engle | 1973 | children | 11.97 $ | 4
+
+The Little Prince | Antoine de Saint-Exupery | 2000 | children | 12.49 $ | 11
+
+
+
