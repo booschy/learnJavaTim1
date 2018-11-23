@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 
 import static fundamentals.dictionary.Translations.*;
-import static fundamentals.utils.FileUtils.fileLinesToList;
+import static utils.FileUtils.fileLinesToList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 

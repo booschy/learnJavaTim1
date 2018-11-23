@@ -1,5 +1,9 @@
 package fundamentals.dictionary;
 
+import utils.FileUtils;
+
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -66,6 +70,22 @@ public interface Translations {
         }
 
         return wordsMap;
+    }
+
+
+    static Map<String, String> getDictionary(
+            String wordsFileLanguageFrom,
+            String wordsFileLanguageTo) throws IOException {
+
+        List<String> fileLinesFrom = FileUtils.fileLinesToList(
+                Paths.get(wordsFileLanguageFrom));
+        List<String> fileLinesTo = FileUtils.fileLinesToList(
+                Paths.get(wordsFileLanguageTo));
+
+        Map<Integer, String> wordMapsFrom = getWordsMap(fileLinesFrom);
+        Map<Integer, String> wordMapsTo = getWordsMap(fileLinesTo);
+
+        return getDictionary(wordMapsFrom, wordMapsTo);
     }
 
 }

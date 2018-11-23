@@ -1,6 +1,6 @@
 package fundamentals.bank;
 
-import fundamentals.utils.FileUtils;
+import utils.FileUtils;
 import org.junit.jupiter.api.Test;
 
 import java.io.IOException;

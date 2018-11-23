@@ -2,7 +2,7 @@ package fundamentals.base;
 
 import org.junit.jupiter.api.Test;
 
-import static fundamentals.utils.ArrayUtils.printArray;
+import static utils.ArrayUtils.printArray;
 
 
 public class Varargs {

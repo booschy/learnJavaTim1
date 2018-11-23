@@ -1,6 +1,6 @@
 package fundamentals.bank;
 
-import fundamentals.utils.FileUtils;
+import utils.FileUtils;
 
 import java.io.IOException;
 import java.nio.file.Files;

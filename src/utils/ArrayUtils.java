@@ -1,4 +1,4 @@
-package fundamentals.utils;
+package utils;
 
 
 import fundamentals.bank.Employer;
