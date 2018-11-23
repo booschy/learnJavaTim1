@@ -59,8 +59,6 @@ public interface FileUtils {
         catch (IOException e){
             throw new Exception("Could not write to file " + outFilePath, e);
         }
-
-
     }
 
 

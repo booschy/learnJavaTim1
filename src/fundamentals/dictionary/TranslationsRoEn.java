@@ -1,6 +1,5 @@
 package fundamentals.dictionary;
 
-import fundamentals.bank.ResourceDirectories;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -8,9 +7,10 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+import static fundamentals.bank.ResourceDirectories.*;
 import static fundamentals.dictionary.Translations.*;
-import static utils.FileUtils.fileLinesToList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static utils.FileUtils.fileLinesToList;
 
 
 public class TranslationsRoEn {
@@ -88,9 +88,9 @@ public class TranslationsRoEn {
     private static List<String> getRomanianLines() throws IOException {
 
         return fileLinesToList(
-                ResourceDirectories.Resource.name(),
-                ResourceDirectories.Fundamentals.name(),
-                ResourceDirectories.Dictionary.name(),
+                Resource.name(),
+                Fundamentals.name(),
+                Dictionary.name(),
                 "romanian_words.txt"
         );
     }
@@ -99,9 +99,9 @@ public class TranslationsRoEn {
     private static List<String> getEnglishLines() throws IOException {
 
         return fileLinesToList(
-                ResourceDirectories.Resource.name(),
-                ResourceDirectories.Fundamentals.name(),
-                ResourceDirectories.Dictionary.name(),
+                Resource.name(),
+                Fundamentals.name(),
+                Dictionary.name(),
                 "english_words.txt"
         );
     }
