@@ -1,7 +1,4 @@
-package fundamentals.threads;
-
-import java.io.PrintWriter;
-import java.io.StringWriter;
+package advanced.threads;
 
 public class MainThreadTest {
 

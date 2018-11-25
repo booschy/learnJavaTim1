@@ -5,7 +5,10 @@ import utils.FileUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class NioObjects {
 
@@ -25,25 +28,40 @@ public class NioObjects {
         roEnDictionary = Translations.getDictionary(
                 wordsFileLanguageFrom,
                 wordsFileLanguageTo);
-/*
-        roEnDictionary = FileUtils.read(
-                FileUtils.getLocalPath(roEnDictionaryFile),
-                new TreeMap<>()
-        );*/
 
     }
 
 
     @Test
-    public void test() throws Exception {
+    public void create_dictionary_test() throws Exception {
 
         System.out.println(roEnDictionary);
 
-        //roEnDictionary.put("zebra", "zebra");
+        roEnDictionary.put("zebra", "zebra");
+        System.out.println(roEnDictionary);
+
+
+        final Path outFilePath = Paths.get(
+                "C:/Users/dan.rusu.IN/Desktop/SDA/learnJava/",
+                roEnDictionaryFile);
+
+        System.out.println(outFilePath.toString());
 
         FileUtils.write(
-                FileUtils.getLocalPath(roEnDictionaryFile),
+                outFilePath,
                 roEnDictionary);
     }
-}
 
+
+    @Test
+    public void read_dictionary_test() throws Exception {
+
+        roEnDictionary = FileUtils.read(
+                FileUtils.getLocalPath(roEnDictionaryFile),
+                new TreeMap<String, String>()
+        );
+
+        System.out.println(roEnDictionary);
+    }
+
+}

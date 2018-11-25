@@ -47,35 +47,57 @@ public interface FileUtils {
     }
 
 
-    public static <T> void write(Path outFilePath, T objectToWrite) throws Exception {
+    public static <T> void write(
+            Path outFilePath,
+            T objectToWrite) throws Exception {
 
-        try(
-                FileOutputStream fos = new FileOutputStream(outFilePath.toFile());
-                ObjectOutputStream oos = new ObjectOutputStream(fos);
+        final File outFile = outFilePath.toFile();
+
+        // try with resources
+        // all resources (FileOutputStream, ObjectOutputStream) will be closed when leaving the try/catch
+        // resourced must implement Closeable
+        try (
+            // Throweable <- Exception <- IOException <- FileNotFoundException
+            FileOutputStream fos = new FileOutputStream(outFile);
+
+            // Throweable <- Exception <- IOException
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            ){
+
+            // object -> ObjectOutputStream -> FileOutputStream -> outFile
+            oos.writeObject(objectToWrite);
+
+        } catch (IOException e) {
+            throw new Exception("Could not write to file " + outFilePath, e);
+        }
+
+
+
+        /*try(
+
         ){
             oos.writeObject(objectToWrite);
         }
 
         catch (IOException e){
             throw new Exception("Could not write to file " + outFilePath, e);
-        }
+        }*/
     }
 
 
-    public static <T> T read(Path inFilePath, T readObject) throws Exception {
+    public static <T> T read(Path inFilePath, T returnedObject) throws Exception {
 
         try (
                 FileInputStream fis = new FileInputStream(inFilePath.toFile());
                 ObjectInputStream ois = new ObjectInputStream(fis);
 
         ) {
-            readObject = (T) ois.readObject();
+            // file -> FileInputStream -> ObjectInputStream -> returnedObject
+            return (T) ois.readObject();
 
         } catch (IOException | ClassNotFoundException e) {
             throw new Exception("Could not read from file " + inFilePath, e);
         }
-
-        return readObject;
     }
 
 }

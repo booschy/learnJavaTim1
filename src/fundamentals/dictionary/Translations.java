@@ -33,8 +33,8 @@ public interface Translations {
 
 
     public static Map<String, String> getDictionary(
-            Map<Integer, String> WordsToTranslateMap,
-            Map<Integer, String> TranslatedWordsMap) {
+            Map<Integer, String> WordsToTranslateMap,  // { 1="pisica", 2="baiat" ... }
+            Map<Integer, String> TranslatedWordsMap) { // // { 1="cat", 2="boy" ... }
 
         Map<String, String> dictionary = new TreeMap<>();
 
@@ -45,7 +45,7 @@ public interface Translations {
                     TranslatedWordsMap.get(key));
         }
 
-        return dictionary;
+        return dictionary;   // { "pisica"="cat", "baiat"="boy" ... }
     }
 
 
@@ -69,7 +69,7 @@ public interface Translations {
             wordsMap.put(intWordId, word);
         }
 
-        return wordsMap;
+        return wordsMap;  // { 1="pisica", 2="baiat" ... }
     }
 
 
@@ -79,12 +79,25 @@ public interface Translations {
 
         List<String> fileLinesFrom = FileUtils.fileLinesToList(
                 Paths.get(wordsFileLanguageFrom));
+        // List<String>
+        //4 baiat
+        //5 masina
+        //20 cursa...
+
         List<String> fileLinesTo = FileUtils.fileLinesToList(
                 Paths.get(wordsFileLanguageTo));
+        // List<String>
+        //17 noun
+        //3 boat
+        //6 challenge...
 
+        // { 1="pisica", 2="baiat" ... }
         Map<Integer, String> wordMapsFrom = getWordsMap(fileLinesFrom);
+
+        // // { 1="cat", 2="boy" ... }
         Map<Integer, String> wordMapsTo = getWordsMap(fileLinesTo);
 
+        // { "pisica"="cat", "baiat"="boy" ... }
         return getDictionary(wordMapsFrom, wordMapsTo);
     }
 

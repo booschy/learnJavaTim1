@@ -1,4 +1,4 @@
-package fundamentals.threads;
+package advanced.threads;
 
 public class SleepTest {
 
