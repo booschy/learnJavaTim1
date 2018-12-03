@@ -1,8 +1,10 @@
 package fundamentals.base;
 
 import fundamentals.enumsPractice.NumbersEnum;
+import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Optional;
 
 import static fundamentals.enumsPractice.NumbersEnum.FIRST;
 
@@ -182,6 +184,7 @@ public interface ArrayPractice {
 
         return (float) sum / positiveCount;
     }
+
 
 }
 
