@@ -40,7 +40,6 @@ public class OperatorsTest {
         System.out.println("after applying duplicateFunctionText2: " + duplicatedNumbers);
 
 
-
         UnaryOperator<Integer> toSquareUnaryOperator = i -> {
             int result = i * i;
             System.out.println("Result: " + result);
@@ -57,11 +56,9 @@ public class OperatorsTest {
         BinaryOperator<Float> divide = (float1, float2) -> float1 / float2;
 
 
-
-
-        System.out.println("Sum of 10 and 3" + sum.apply(10f,3f));
-        System.out.println("Multiplication of 10 by 3" + multiply.apply(10f,3f));
-        System.out.println("Division of 10 by 3" + divide.apply(10f,3f));
+        System.out.println("Sum of 10 and 3" + sum.apply(10f, 3f));
+        System.out.println("Multiplication of 10 by 3" + multiply.apply(10f, 3f));
+        System.out.println("Division of 10 by 3" + divide.apply(10f, 3f));
 
 
         Person employeeFromTm = new Person("Mihai", Employer.Visma, "Timisoara");
@@ -73,16 +70,14 @@ public class OperatorsTest {
             final String name1 = person1.getName();
             final String name2 = person2.getName();
 
-            if(name1.compareTo(name2) < 0){
+            if (name1.compareTo(name2) < 0) {
                 return person1;
-            }
-            else if(name1.compareTo(name2) == 0){
-                if (person1.getLocation().compareTo(person2.getLocation()) < 0){
+            } else if (name1.compareTo(name2) == 0) {
+                if (person1.getLocation().compareTo(person2.getLocation()) < 0) {
                     return person1;
                 }
                 return person2;
-            }
-            else {
+            } else {
                 return person2;
             }
 

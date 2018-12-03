@@ -1,10 +1,11 @@
 package utils;
 
-import fundamentals.bank.ResourceDirectories;
 import org.junit.jupiter.api.Test;
 
 import java.nio.file.Path;
 import java.nio.file.Paths;
+
+import static fundamentals.bank.ResourceDirectories.*;
 
 public class FileUtilsTest {
 
@@ -16,10 +17,9 @@ public class FileUtilsTest {
         System.out.println("User directory: " + USER_DIR);
 
         Path fullFilePath = FileUtils.getLocalPath(
-                ResourceDirectories.Resource.name(),
-                ResourceDirectories.Fundamentals.name(),
-                ResourceDirectories.Bank.name(),
-                "employees.csv");
+                Resource,
+                Fundamentals,
+                Bank).resolve("employees.csv");
 
         System.out.println(fullFilePath);
 

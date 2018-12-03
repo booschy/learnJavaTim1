@@ -9,6 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BookStoreTest {
+
     final String notFoundId = "0000";
 
     String random;
@@ -27,15 +28,29 @@ public class BookStoreTest {
     public void beforeEach(){
 
         book1 = new Book(
-                "name2", "author", 2000, BookGenre.CHILDREN, 100f);
+                "name2",
+                "author",
+                2000,
+                BookGenre.CHILDREN, 100f);
+
         book1Id = "1111";
 
         book2 = new Book(
-                "name2", "author", 2000, BookGenre.CHILDREN, 100f);
+                "name2",
+                "author",
+                2000,
+                BookGenre.CHILDREN,
+                100f);
+
         book2Id = "1112";
 
         book3 = new Book(
-                "name3", "author", 2000, BookGenre.CHILDREN, 100f);
+                "name3",
+                "author",
+                2000,
+                BookGenre.CHILDREN,
+                100f);
+
         book3Id="1113";
 
 
@@ -48,8 +63,6 @@ public class BookStoreTest {
 
 
         booksMap.put(book1Id, book1);
-
-
         booksMap.put(book2Id, book2);
 
         Map<String, Integer> quantityMap = new HashMap<>();
@@ -67,6 +80,7 @@ public class BookStoreTest {
         Assertions.assertEquals(4, random.length());
         // Assertions.assertEquals(3, random.length());   // fail
     }
+
 
     @Test
     public void test_random_contains_digits_only(){

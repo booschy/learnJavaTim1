@@ -8,6 +8,12 @@ public interface Operation<T> {
     public T operate(T first, T last);
 
     static void info(){
+
+        Runnable r;
+        Comparable<String> c;
+
         System.out.println(Operation.class.getName());
+
+
     }
 }

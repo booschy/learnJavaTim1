@@ -1,11 +1,15 @@
 package utils;
 
+import fundamentals.bank.ResourceDirectories;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
+import java.util.stream.Collectors;
 
 public interface FileUtils {
 
@@ -18,10 +22,23 @@ public interface FileUtils {
     }
 
 
+    static Path getLocalPath(ResourceDirectories... moreDirs) {
+
+        return Paths.get(
+
+                System.getProperty("user.dir"),
+
+                List.of(moreDirs)
+                        .stream()
+                        .map(resDir -> resDir.name())
+                        .collect(Collectors.toList())
+                        .toArray(new String[0]));
+    }
+
+
     static List<String> fileLinesToList(String... morePaths) throws IOException {
 
         Path fileFullPath = getLocalPath(morePaths);
-
         return Files.readAllLines(fileFullPath);
     }
 
