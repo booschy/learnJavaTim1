@@ -35,12 +35,15 @@ public class VectorRotation {
 
     public static Vector<Integer> rotateRight2(Vector<Integer> v, int rotationsCount){
 
+        //
+
         Vector<Integer> finalVector = new Vector<>();
 
         int rotationStartIndex = v.size() - rotationsCount % v.size();
 
+        finalVector.addAll(v.subList(rotationStartIndex, v.size()));
+
         finalVector.addAll(v.subList(0, rotationStartIndex));
-        finalVector.addAll(0, v.subList(rotationStartIndex, v.size()));
 
         return finalVector;
     }
