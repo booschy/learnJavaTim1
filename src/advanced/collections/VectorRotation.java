@@ -15,6 +15,7 @@ public class VectorRotation {
 
         System.out.println(rotateRight(v, 145));
 
+        System.out.println(rotateRight2(v, 145));
     }
 
 
@@ -30,6 +31,20 @@ public class VectorRotation {
 
         return finalVector;
     }
+
+
+    public static Vector<Integer> rotateRight2(Vector<Integer> v, int rotationsCount){
+
+        Vector<Integer> finalVector = new Vector<>();
+
+        int rotationStartIndex = v.size() - rotationsCount % v.size();
+
+        finalVector.addAll(v.subList(0, rotationStartIndex));
+        finalVector.addAll(0, v.subList(rotationStartIndex, v.size()));
+
+        return finalVector;
+    }
+
 
 
     public static Vector<Integer> rotateRightOnce(Vector<Integer> v){
