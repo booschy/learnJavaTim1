@@ -5,6 +5,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 public class ArrayFindIndex {
@@ -108,6 +110,8 @@ public class ArrayFindIndex {
         Assertions.assertArrayEquals(
                 new int[]{25, 77, 1, 44, 100, 77},
                 newNumbers);
+
+
     }
 
 
@@ -121,5 +125,7 @@ public class ArrayFindIndex {
         Assertions.assertArrayEquals(
                 numbers,
                 newNumbers);
+
+        System.out.println(List.of());
     }
 }
