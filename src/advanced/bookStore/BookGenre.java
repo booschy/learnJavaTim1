@@ -4,5 +4,5 @@ public enum BookGenre {
     ROMANCE,
     FICTION,
     CHILDREN,
-    MYSTERY
+    MISTERY
 }

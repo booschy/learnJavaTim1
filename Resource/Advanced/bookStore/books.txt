@@ -10,9 +10,9 @@ Hopeless | Colleen Hoover | 2012 | Romance | 10.5 $ | 30
 
 Beautiful Disaster | Jamie McGuire | 2011 | romance | 12.34 $ | 20
 
-The Girl with the Dragon Tattoo | Stieg Larsson | 2008 | Mystery | 20 $ | 9
+The Girl with the Dragon Tattoo | Stieg Larsson | 2008 | Mistery | 20 $ | 9
 
-And Then There Were None | Agatha Christie | 2004 | mystery | 6.4 $ | 13
+And Then There Were None | Agatha Christie | 2004 | mistery | 6.4 $ | 13
 
 Shutter Island | Dennis Lehane | 2004 | MISTERY | 11.3 $ | 7
 

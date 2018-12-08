@@ -8,6 +8,33 @@ public class Book {
     private BookGenre genre;
     private float price;
 
+
+    @Override
+    public boolean equals(Object otherBookObject) {
+
+        Book otherBook = (Book)otherBookObject;
+
+        boolean isEqual = this.name.equals(otherBook.getName().trim())
+                && this.author.equals(otherBook.getAuthor().trim())
+                && this.genre.equals(otherBook.getGenre())
+                && (this.year == (otherBook.getYear()))
+                && (this.price == otherBook.getPrice());
+
+        return isEqual;
+    }
+
+
+    @Override
+    public String toString() {
+
+        return String.format(" | %25s | %25s | %d | %10s | %.2f",
+                name,
+                author,
+                year,
+                genre,
+                price);
+    }
+
     public Book(
             String name,
             String author,

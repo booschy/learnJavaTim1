@@ -1,13 +1,19 @@
 package advanced.bookStore;
 
+import org.junit.jupiter.api.Assertions;
+import utils.FileUtils;
+
+import java.io.IOException;
+import java.nio.file.Path;
 import java.util.List;
 import java.util.Map;
-import java.util.Optional;
+import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class BookStore {
 
-/*    - a map of books with unique id (a random string of 4 digits).
+/*    - a map of books with unique id (a randomBookId string of 4 digits).
             - a map of book quantities (key=bookId, value=quantity)
 
     Create an empty book store.*/
@@ -23,12 +29,58 @@ public class BookStore {
         this.quantityMap = quantityMap;
     }
 
+    public static BookInfo bookStringToBookInfo(String bookString) {
 
-    public boolean isBookInStore(Book book){
+        String[] bookStringTokens = bookString.split("\\s*\\|\\s*");
 
-        return bookMap.values().contains(book);
+
+        Assertions.assertEquals(6, bookStringTokens.length);
+
+        return new BookInfo(
+
+                new Book(
+                        // book name
+                        bookStringTokens[0],
+
+                        // author
+                        bookStringTokens[1],
+
+                        // year
+                        Integer.valueOf(bookStringTokens[2]),
+
+                        // genre
+                        BookGenre.valueOf(bookStringTokens[3].toUpperCase()),
+
+                        // price
+                        Float.valueOf(
+                                bookStringTokens[4].replaceAll(
+                                        "\\s*\\$\\s*",
+                                        ""))
+                ),
+                Integer.valueOf(bookStringTokens[5])
+        );
     }
 
+
+    public boolean isBookInStore(Book book){
+        // wrong - compares objects
+        return bookMap.values().contains(book);
+        //return true;
+
+    }
+
+
+    public int getQuantity(Book book){
+
+        int quantity = 0;
+
+        if(isBookInStore(book)){
+            String bookId = getBookId(book);
+            quantity = quantityMap.get(bookId);
+        }
+
+        return quantity;
+    }
 
     public String getBookId(Book currentBook){
 
@@ -46,14 +98,53 @@ public class BookStore {
     }
 
 
-    public void addBook(Book book){
+    public void addBook(Book book, int quantity){
 
         if(isBookInStore(book)){
 
+            String bookId = getBookId(book);
+
+            int newQuantity = getQuantity(book) + quantity;
+
+            quantityMap.put(bookId, newQuantity);
+
+        }
+        else{
+            // book is not in store
+
+            String bookId = generateBookId();
+
+            bookMap.put(bookId, book);
+
+            quantityMap.put(bookId, quantity);
         }
 
-        String bookId = generateBookId();
     }
+
+
+    public void addBook(Path filepath) throws IOException {
+
+        List<String> bookLines = FileUtils.fileLinesToList(filepath);
+
+        //"The Hunger Games | Suzanne Collins | 2008 | FICTION | 11.25 $ | 20" -> BookInfo(...)
+        List<BookInfo> bookInfoList = bookLines.stream()
+                .filter(bookLineIsNotCommented)
+                .filter(bookLineIsNotEmpty)
+                .map(bookLine -> bookStringToBookInfo(bookLine))
+                .collect(Collectors.toList());
+
+        bookInfoList.forEach(bookInfo -> addBook(
+                bookInfo.getBook(),
+                bookInfo.getQuantity()));
+
+        //TODO unit test
+    }
+
+    public Predicate<String> bookLineIsNotCommented = bookLine ->
+            false == bookLine.startsWith("//");
+
+    public Predicate<String> bookLineIsNotEmpty = bookLine ->
+            false == bookLine.isEmpty();
 
 
     public static String generateBookId() {
@@ -84,5 +175,20 @@ public class BookStore {
         return id;
     }
 
+
+
+    public String toString(){
+
+        return bookMap.keySet().stream()
+                .map(keyToBookInfo)
+                .collect(Collectors.joining("\n"));
+    }
+
+    public Function<String, String> keyToBookInfo = key ->
+
+            String.format("%s %s | quantity: %d",
+                        key,
+                        bookMap.get(key),
+                        quantityMap.get(key));
 
 }
