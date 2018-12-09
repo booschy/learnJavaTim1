@@ -5,6 +5,7 @@ import utils.FileUtils;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
@@ -27,6 +28,15 @@ public class BookStore {
 
         this.bookMap = bookMap;
         this.quantityMap = quantityMap;
+    }
+
+    public BookStore(){
+
+        this(
+                new HashMap<String, Book>(),
+                new HashMap<String, Integer>()
+        );
+
     }
 
     public static BookInfo bookStringToBookInfo(String bookString) {
@@ -190,5 +200,22 @@ public class BookStore {
                         key,
                         bookMap.get(key),
                         quantityMap.get(key));
+
+    // #4 Searches
+    public List<BookInfo> searchBookByName(String bookName){
+
+        return bookMap.keySet().stream()
+
+                .filter(key -> bookMap.get(key).getName().equals(bookName))
+                // stream of keys (String)
+
+                .map(key -> bookMap.get(key))
+                // stream of values (Book)
+
+                .map(book -> new BookInfo(book, getQuantity(book)))
+                // stream of BookInfo
+
+                .collect(Collectors.toList());
+    }
 
 }

@@ -6,7 +6,10 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 
+import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import static advanced.bookStore.BookGenre.FICTION;
@@ -263,5 +266,93 @@ public class BookStoreTest {
                 expectedBookInfo.equals(
                     BookStore.bookStringToBookInfo(bookString)));
     }
+
+
+    // #4 SEARCHES
+    @Nested
+    class SearchBookByName {
+
+        @Test
+        public void multiple_books_found_test() throws IOException {
+
+            // GIVEN
+            // Set up (test inititalization)
+
+            BookStore bookStore = getBookStoreForTest();
+            final String bookSearchName = "Twilight";
+
+            System.out.println(bookStore);
+
+            // WHEN
+            List<BookInfo> foundBookInfoList = bookStore.searchBookByName(bookSearchName);
+
+            // THEN
+            Assertions.assertEquals(
+                    2,
+                    foundBookInfoList.size());
+
+            for (int i = 0; i < foundBookInfoList.size(); i++) {
+
+                BookInfo currentBookInfo = foundBookInfoList.get(i);
+
+
+                Assertions.assertEquals(bookSearchName,
+                        currentBookInfo.getBook().getName());
+            }
+        }
+
+
+        @Test
+        public void no_book_found_test() throws IOException {
+
+            BookStore bookStore = getBookStoreForTest();
+            final String bookSearchName = "Unknown book";
+
+            // WHEN
+            List<BookInfo> foundBookInfoList = bookStore.searchBookByName(bookSearchName);
+
+            // THEN
+            Assertions.assertEquals(
+                    0,
+                    foundBookInfoList.size());
+        }
+
+
+        @Test
+        public void empty_store_test() throws IOException {
+
+            BookStore bookStore = new BookStore();
+            final String bookSearchName = "Twilight";
+
+            // WHEN
+            List<BookInfo> foundBookInfoList = bookStore.searchBookByName(bookSearchName);
+
+            // THEN
+            Assertions.assertEquals(
+                    0,
+                    foundBookInfoList.size());
+        }
+    }
+
+    private BookStore getBookStoreForTest() throws IOException {
+
+        BookStore bookStore = new BookStore();
+
+        bookStore.addBook(Paths.get(
+                "Resource/Advanced/bookStore/books.txt"));
+
+        final String bookSearchName = "Twilight";
+
+        bookStore.addBook(
+                new Book(bookSearchName,
+                        "Stephenie Meyer",
+                        2018,
+                        FICTION,
+                        13f),
+                40);
+
+        return bookStore;
+    }
+
 
 }

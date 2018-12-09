@@ -12,10 +12,7 @@ public class BookStoreApplication {
     public static void main(String[] args) throws IOException {
 
         // ###1
-        BookStore bookStore = new BookStore(
-                new HashMap<String, Book>(),
-                new HashMap<String, Integer>()
-        );
+        BookStore bookStore = new BookStore();
 
         // ###2
         bookStore.addBook(new Book(
@@ -51,6 +48,10 @@ public class BookStoreApplication {
                 "Resource/Advanced/bookStore/books.txt"));
 
         System.out.println(bookStore);
+
+        System.out.println("#4 SEARCHES----------------------------------------");
+
+
     }
 
 
