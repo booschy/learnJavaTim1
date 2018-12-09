@@ -334,6 +334,70 @@ public class BookStoreTest {
         }
     }
 
+    @Nested
+    class SearchBookByAuthor {
+
+        @Test
+        public void multiple_books_found_test() throws IOException {
+
+            // GIVEN
+            // Set up (test inititalization)
+
+            BookStore bookStore = getBookStoreForTest();
+            final String bookSearchAuthor = "Stephenie Meyer";
+
+            // WHEN
+            List<BookInfo> foundBookInfoList = bookStore.searchBookByAuthor(bookSearchAuthor);
+
+            // THEN
+            Assertions.assertEquals(
+                    2,
+                    foundBookInfoList.size());
+
+            for (int i = 0; i < foundBookInfoList.size(); i++) {
+
+                BookInfo currentBookInfo = foundBookInfoList.get(i);
+
+
+                Assertions.assertEquals(bookSearchAuthor,
+                        currentBookInfo.getBook().getAuthor());
+            }
+        }
+
+
+        @Test
+        public void no_book_found_test() throws IOException {
+
+            BookStore bookStore = getBookStoreForTest();
+            final String bookSearchAuthor = "Unknown author";
+
+            // WHEN
+            List<BookInfo> foundBookInfoList = bookStore.searchBookByAuthor(bookSearchAuthor);
+
+            // THEN
+            Assertions.assertEquals(
+                    0,
+                    foundBookInfoList.size());
+        }
+
+
+        @Test
+        public void empty_store_test() throws IOException {
+
+            BookStore bookStore = new BookStore();
+            final String bookSearchAuthor = "Stephenie Meyer";
+
+            // WHEN
+            List<BookInfo> foundBookInfoList = bookStore.searchBookByAuthor(bookSearchAuthor);
+
+            // THEN
+            Assertions.assertEquals(
+                    0,
+                    foundBookInfoList.size());
+        }
+    }
+
+
     private BookStore getBookStoreForTest() throws IOException {
 
         BookStore bookStore = new BookStore();

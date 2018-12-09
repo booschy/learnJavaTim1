@@ -218,4 +218,19 @@ public class BookStore {
                 .collect(Collectors.toList());
     }
 
+    public List<BookInfo> searchBookByAuthor(String bookAuthor) {
+
+        return bookMap.keySet().stream()
+
+                .filter(key -> bookMap.get(key).getAuthor().equals(bookAuthor))
+                // stream of keys (String)
+
+                .map(key -> bookMap.get(key))
+                // stream of values (Book)
+
+                .map(book -> new BookInfo(book, getQuantity(book)))
+                // stream of BookInfo
+
+                .collect(Collectors.toList());
+    }
 }
