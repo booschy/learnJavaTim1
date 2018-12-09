@@ -50,6 +50,11 @@ public class BookStoreApplication {
         System.out.println(bookStore);
 
         System.out.println("#4 SEARCHES----------------------------------------");
+        // TODO HOMEWORK
+
+        System.out.println("#5 SEARCHES----------------------------------------");
+        // TODO HOMEWORK
+
 
 
     }

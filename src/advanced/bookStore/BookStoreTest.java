@@ -1,9 +1,6 @@
 package advanced.bookStore;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 
 import java.io.IOException;
@@ -78,7 +75,8 @@ public class BookStoreTest {
                 "author",
                 2000,
                 BookGenre.CHILDREN,
-                100f);;
+                100f);
+        ;
 
 
         // Random book id
@@ -217,7 +215,7 @@ public class BookStoreTest {
             Assertions.assertEquals(false,
                     bookStore.isBookInStore(newBook1));
 
-            bookStore.addBook(newBook1,5);
+            bookStore.addBook(newBook1, 5);
 
             Assertions.assertEquals(true,
                     bookStore.isBookInStore(newBook1));
@@ -245,7 +243,7 @@ public class BookStoreTest {
 
 
     @Test
-    public void bookStringToBookInfo_test(){
+    public void bookStringToBookInfo_test() {
 
         String bookString = "The Hunger Games | Suzanne Collins | 2008 | FICTION | 11.25 $ | 20";
 
@@ -262,9 +260,9 @@ public class BookStoreTest {
         System.out.println(expectedBookInfo);
         System.out.println(BookStore.bookStringToBookInfo(bookString));
 
-       Assertions.assertTrue(
+        Assertions.assertTrue(
                 expectedBookInfo.equals(
-                    BookStore.bookStringToBookInfo(bookString)));
+                        BookStore.bookStringToBookInfo(bookString)));
     }
 
 
@@ -397,6 +395,189 @@ public class BookStoreTest {
         }
     }
 
+    @Nested
+    class SearchBookByNameAndAuthor {
+
+        @Test
+        public void multiple_books_found_test() throws IOException {
+
+            // GIVEN
+            BookStore bookStore = getBookStoreForTest();
+            final String bookSearchName = "Twilight";
+            final String bookSearchAuthor = "Stephenie Meyer";
+
+            // WHEN
+            List<BookInfo> foundBookInfoList = bookStore.searchBookByNameAndAuthor(
+                    bookSearchName,
+                    bookSearchAuthor);
+
+
+            // THEN
+            Assertions.assertEquals(
+                    2,
+                    foundBookInfoList.size());
+
+            for (int i = 0; i < foundBookInfoList.size(); i++) {
+
+                BookInfo currentBookInfo = foundBookInfoList.get(i);
+
+                // assert name
+                Assertions.assertEquals(bookSearchName,
+                        currentBookInfo.getBook().getName());
+
+                // assert author
+                Assertions.assertEquals(bookSearchAuthor,
+                        currentBookInfo.getBook().getAuthor());
+            }
+        }
+
+        //TODO implement next unit tests (4)
+        @Test
+        @Disabled
+        @DisplayName("One book found if there are 2 books with same name but different author")
+        public void one_book_found_test() throws IOException {
+        }
+
+        @Test
+        @Disabled
+        @DisplayName("One book found if there are 2 books with same author but different name")
+        public void one_book_found2_test() throws IOException {
+        }
+
+        @Test
+        @Disabled
+        public void no_book_found_test() throws IOException {
+        }
+
+        @Test
+        @Disabled
+        public void empty_store_test() throws IOException {
+        }
+    }
+
+
+    @Nested
+    class SearchBooksCheaperThanSpecifiedPriceTest {
+
+        @Test
+        public void no_book_found_test() throws IOException {
+
+            // GIVEN
+            BookStore bookStore = getBookStoreForTest();
+            final float topPrice = 6.00f;
+
+            // WHEN
+            List<BookInfo> foundBookInfoList = bookStore.searchBookByCheaperPrice(topPrice);
+
+            // THEN
+            Assertions.assertEquals(
+                    0,
+                    foundBookInfoList.size());
+
+            for (int i = 0; i < foundBookInfoList.size(); i++) {
+
+                BookInfo currentBookInfo = foundBookInfoList.get(i);
+
+                Assertions.assertTrue(
+                        currentBookInfo.getBook().getPrice() < topPrice);
+            }
+        }
+
+        @Test
+        public void multiple_books_found_test() throws IOException {
+
+            // GIVEN
+            BookStore bookStore = getBookStoreForTest();
+            final float topPrice = 25.00f;
+
+            // WHEN
+            List<BookInfo> foundBookInfoList = bookStore.searchBookByCheaperPrice(topPrice);
+
+            // THEN
+            Assertions.assertEquals(
+                    11,
+                    foundBookInfoList.size());
+
+            for (int i = 0; i < foundBookInfoList.size(); i++) {
+
+                BookInfo currentBookInfo = foundBookInfoList.get(i);
+
+                Assertions.assertTrue(
+                        currentBookInfo.getBook().getPrice() < topPrice);
+            }
+        }
+
+        @Test
+        public void empty_bookstore_test() throws IOException {
+
+            // GIVEN
+            BookStore bookStore = new BookStore();
+            final float topPrice = 100.00f;
+
+            // WHEN
+            List<BookInfo> foundBookInfoList = bookStore.searchBookByCheaperPrice(topPrice);
+
+            // THEN
+            Assertions.assertEquals(
+                    0,
+                    foundBookInfoList.size());
+        }
+
+
+    }
+
+    @Nested
+    class GetCheapestBookTest{
+
+        BookStore bookStore;
+        BookStore emptyBookStore;
+        float minPrice;
+
+        List<Book> cheapestBooksList;
+
+
+        @BeforeEach
+        public void beforeEach() throws IOException {
+
+            // GIVEN
+            bookStore = getBookStoreForTest();
+            emptyBookStore = new BookStore();
+            minPrice = 6.29f;
+        }
+
+
+        @Test
+        public void not_empty_bookstore_test(){
+
+            // WHEN
+            cheapestBooksList = bookStore.getCheapestBooks();
+
+            // THEN
+            Assertions.assertEquals(
+                    2,
+                    cheapestBooksList.size());
+
+            for (int i = 0; i < cheapestBooksList.size(); i++) {
+
+                Assertions.assertEquals(
+                        minPrice,
+                        cheapestBooksList.get(i).getPrice());
+            }
+        }
+
+        @Test
+        public void empty_bookstore_test() throws IOException {
+
+            // WHEN
+            cheapestBooksList = emptyBookStore.getCheapestBooks();
+
+            // THEN
+            Assertions.assertEquals(
+                    0,
+                    cheapestBooksList.size());
+        }
+    }
+
 
     private BookStore getBookStoreForTest() throws IOException {
 
@@ -405,10 +586,8 @@ public class BookStoreTest {
         bookStore.addBook(Paths.get(
                 "Resource/Advanced/bookStore/books.txt"));
 
-        final String bookSearchName = "Twilight";
-
         bookStore.addBook(
-                new Book(bookSearchName,
+                new Book("Twilight",
                         "Stephenie Meyer",
                         2018,
                         FICTION,
@@ -418,5 +597,107 @@ public class BookStoreTest {
         return bookStore;
     }
 
+
+    @Nested
+    class getRarestBookTest{
+
+        BookStore bookStore;
+        BookStore emptyBookStore;
+        float minPrice;
+
+        List<Book> cheapestBooksList;
+
+
+        @BeforeEach
+        public void beforeEach() throws IOException {
+
+            // GIVEN
+            bookStore = getBookStoreForTest();
+            emptyBookStore = new BookStore();
+        }
+
+        @Test
+        public void not_empty_store_test(){
+
+            int minQuantity = bookStore.getMinQuantity();
+            Assertions.assertEquals(4, minQuantity);
+        }
+
+        @Test
+        public void empty_store_test(){
+
+            int minQuantity = emptyBookStore.getMinQuantity();
+            Assertions.assertEquals(0, minQuantity);
+        }
+
+
+
+    }
+
+    @Nested
+    class GetTotalBooksQuantityTest {
+
+        BookStore bookStore;
+        BookStore emptyBookStore;
+
+
+        @BeforeEach
+        public void beforeEach() throws IOException {
+
+            // GIVEN
+            bookStore = getBookStoreForTest();
+            emptyBookStore = new BookStore();
+        }
+
+        @Test
+        public void not_empty_bookstore_test(){
+
+            // WHEN + THEN
+            Assertions.assertEquals(249,
+                    bookStore.getTotalBooksQuantity());
+        }
+
+        @Test
+        public void empty_bookstore_test(){
+
+            // WHEN + THEN
+            Assertions.assertEquals(0,
+                    emptyBookStore.getTotalBooksQuantity());
+        }
+
+    }
+
+    @Nested
+    class GetTotalPriceTest {
+
+        BookStore bookStore;
+        BookStore emptyBookStore;
+
+
+        @BeforeEach
+        public void beforeEach() throws IOException {
+
+            // GIVEN
+            bookStore = getBookStoreForTest();
+            emptyBookStore = new BookStore();
+        }
+
+        @Test
+        public void not_empty_bookstore_test(){
+
+            // WHEN + THEN
+            Assertions.assertEquals(2636.79f,
+                    bookStore.getTotalPrice());
+        }
+
+        @Test
+        public void empty_bookstore_test(){
+
+            // WHEN + THEN
+            Assertions.assertEquals(0f,
+                    emptyBookStore.getTotalPrice());
+        }
+
+    }
 
 }

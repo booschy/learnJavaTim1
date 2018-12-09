@@ -4,7 +4,9 @@ The Hunger Games | Suzanne Collins | 2008 | FICTION | 11.25 $ | 20
 
 Twilight | Stephenie Meyer | 2006 | Fiction | 9.49 $ | 25
 
-Pride and Prejudice | Jane Austen | 2000 | romance | 7.85 $ | 5
+// Pride and Prejudice | Jane Austen | 2000 | romance | 7.85 $ | 4
+
+Hopeless | Colleen Hoover | 2012 | Romance | 10.5 $ | 30
 
 Hopeless | Colleen Hoover | 2012 | Romance | 10.5 $ | 30
 
@@ -12,7 +14,7 @@ Beautiful Disaster | Jamie McGuire | 2011 | romance | 12.34 $ | 20
 
 The Girl with the Dragon Tattoo | Stieg Larsson | 2008 | Mistery | 20 $ | 9
 
-And Then There Were None | Agatha Christie | 2004 | mistery | 6.4 $ | 13
+And Then There Were None | Agatha Christie | 2004 | mistery | 6.29 $ | 13
 
 Shutter Island | Dennis Lehane | 2004 | MISTERY | 11.3 $ | 7
 
