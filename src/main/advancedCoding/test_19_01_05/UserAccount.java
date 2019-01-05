@@ -30,7 +30,7 @@ public final class UserAccount {
     public UserAccount(String email,
                        String firstName,
                        String secondName,
-                       String password){
+                       String password) {
         this(email,
                 firstName,
                 secondName,
@@ -65,32 +65,18 @@ public final class UserAccount {
     }
 
     @Override
-    public boolean equals(Object otherObject) {
+    public boolean equals(Object other) {
+        if (other == null) return false;
+        if (!(other instanceof UserAccount))return false;
 
-        if (false == isOtherObjectValid(otherObject)) return false;
+        if (this == other) return true;
 
-        final UserAccount otherUserAccount = (UserAccount) otherObject;
-
-        if (this.email.equals(otherUserAccount.email)){
+        final UserAccount otherUserAccount = (UserAccount) other;
+        if (this.email.equals(otherUserAccount.email)) {
             return true;
         }
 
         return false;
-    }
-
-     private boolean isOtherObjectValid(Object otherObject) {
-        if (otherObject == null){
-            return false;
-        }
-
-        final String otherUserAccountObjectClassName = otherObject
-                .getClass().getSimpleName();
-
-        if (false == otherUserAccountObjectClassName.equals("UserAccount")){
-            return false;
-        }
-
-        return true;
     }
 
     @Override
@@ -103,7 +89,6 @@ public final class UserAccount {
                 cashCredits + "",
                 subscriptions.toString());
     }
-
 
 
 }
