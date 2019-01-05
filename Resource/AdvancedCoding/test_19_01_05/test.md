@@ -17,7 +17,7 @@
 #### 15 POINTS
 
 
-3. What will the following code print?
+2. What will the following code print?
 
     ```
     int i = 10;
@@ -40,7 +40,7 @@
 #### 10 points
 
 
-4. What will be printed to console after running the Test class?
+3. What will be printed to console after running the Test class?
 
     ```
     interface Vehicle{
@@ -78,7 +78,7 @@
 #### 10 points
 
 
-5. Which of the following methods can appear in an interface?
+4. Which of the following methods can appear in an interface?
 
     a.   private void message(){ System.out.println("message"); };
 
@@ -94,7 +94,7 @@
 
 #### 10 points
 
-6. Streams test: having the following classes:
+5. Streams test: having the following classes:
 
     ```
     public class Person{
