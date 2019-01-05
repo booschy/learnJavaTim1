@@ -132,11 +132,12 @@
     b. Write a filter for names starting with "D".
     Count persons with names starting with "D" from the personList.
 
-    c. Write a filter for persons with age between 20 and 30
+    c. Write a filter for persons with age between 20 and 30.
     Create a list of names from the personList, for persons
     that match the above condition.
 
-    d. Write a supplier of person. Print what it supplies.
+    d. Write a supplier of person.
+    Print what it supplies.
 
     e. Write a consumer of person that only prints the person.
     Use it against persons list.
