@@ -41,7 +41,7 @@
 3.  Create a contract for an UserAccountCatalog that will have the following functionality:
 
 
-    - add user account
+    - add user account (unique user accounts)
 
     - find user account by email
 

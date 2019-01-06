@@ -2,6 +2,8 @@ package main.advancedCoding.test_19_01_05;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 public final class UserAccount {
 
@@ -10,14 +12,14 @@ public final class UserAccount {
     private String secondName;
     private String password;
     private int cashCredits;
-    private Set<String> subscriptions;
+    private TreeSet<Subscription> subscriptions;
 
     public UserAccount(String email,
                        String firstName,
                        String secondName,
                        String password,
                        int cashCredits,
-                       Set<String> subscriptions) {
+                       TreeSet<Subscription> subscriptions) {
 
         this.email = email;
         this.firstName = firstName;
@@ -36,7 +38,7 @@ public final class UserAccount {
                 secondName,
                 password,
                 0,
-                new HashSet<String>());
+                new TreeSet<Subscription>());
 
     }
 
@@ -60,7 +62,7 @@ public final class UserAccount {
         return cashCredits;
     }
 
-    public Set<String> getSubscriptions() {
+    public TreeSet<Subscription> getSubscriptions() {
         return subscriptions;
     }
 
@@ -89,9 +91,30 @@ public final class UserAccount {
                 firstName,
                 secondName,
                 cashCredits + "",
-                subscriptions.toString());
+                getSubscriptionsText(subscriptions));
     }
 
+    private String getSubscriptionsText(Set<Subscription> subscriptions) {
+
+        String subscriptionsText = "[";
+
+/*        for(Subscription subscription : subscriptions){
+            subscriptionsText += subscription.getSubscriptionName() + ", ";
+        }
+
+        subscriptionsText = subscriptionsText.substring(
+                0,
+                subscriptionsText.length()-2);*/
+
+        subscriptionsText += subscriptions.stream()
+                //.map(subscription -> subscription.getSubscriptionName())
+                .map(Subscription::getSubscriptionName)
+                .collect(Collectors.joining(", "));
+
+        subscriptionsText += "]";
+
+        return subscriptionsText;
+    }
 
 }
 

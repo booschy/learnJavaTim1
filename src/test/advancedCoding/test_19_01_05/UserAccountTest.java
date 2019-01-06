@@ -1,15 +1,17 @@
 package test.advancedCoding.test_19_01_05;
 
+import main.advancedCoding.test_19_01_05.Subscription;
 import main.advancedCoding.test_19_01_05.UserAccount;
 import org.junit.jupiter.api.*;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.TreeSet;
 
 public class UserAccountTest {
 
-    Set<String> subscriptions;
+    TreeSet<Subscription> subscriptions;
     UserAccount userAccount;
     UserAccount otherUserAccount1;
     UserAccount otherUserAccount2;
@@ -17,10 +19,11 @@ public class UserAccountTest {
     @BeforeEach
     public void beforeEach(){
 
-        subscriptions = new HashSet<>();
+        subscriptions = new TreeSet<>();
         subscriptions.addAll(List.of(
-                "Pluralsight",
-                "LinkedIn Learning"));
+                Subscription.LINKEDIN_LEARNING,
+                Subscription.PLURALSIGHT
+                ));
 
         userAccount = new UserAccount(
                 "danginkgo@yahoo.com",
@@ -67,7 +70,6 @@ public class UserAccountTest {
                     EXPECTED_STRING,
                     userAccount.toString());
         }
-
     }
 
     @Nested
