@@ -66,10 +66,12 @@ public final class UserAccount {
 
     @Override
     public boolean equals(Object other) {
+        // common part to all equals implementations
         if (other == null) return false;
         if (!(other instanceof UserAccount))return false;
 
         if (this == other) return true;
+        // end common part
 
         final UserAccount otherUserAccount = (UserAccount) other;
         if (this.email.equals(otherUserAccount.email)) {

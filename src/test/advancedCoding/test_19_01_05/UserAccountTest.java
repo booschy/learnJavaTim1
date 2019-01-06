@@ -45,52 +45,59 @@ public class UserAccountTest {
                 subscriptions);
     }
 
-    @Test
-    public void toString_constructor2_test(){
+    @Nested
+    class ToStringTest {
 
-        final String EXPECTED_STRING = "danginkgo@yahoo.com, D, R, 0, []";
+        @Test
+        public void constructor2_test() {
 
-        Assertions.assertEquals(
-                EXPECTED_STRING,
-                otherUserAccount1.toString());
+            final String EXPECTED_STRING = "danginkgo@yahoo.com, D, R, 0, []";
+
+            Assertions.assertEquals(
+                    EXPECTED_STRING,
+                    otherUserAccount1.toString());
+        }
+
+        @Test
+        public void constructor1_test() {
+
+            final String EXPECTED_STRING = "danginkgo@yahoo.com, Dan, Rusu, 500, [Pluralsight, LinkedIn Learning]";
+
+            Assertions.assertEquals(
+                    EXPECTED_STRING,
+                    userAccount.toString());
+        }
+
     }
 
-    @Test
-    public void toString_constructor1_test(){
+    @Nested
+    class EqualsTest {
+        @Test
+        public void positive_test() {
+            Assertions.assertEquals(
+                    true,
+                    userAccount.equals(otherUserAccount1));
+        }
 
-        final String EXPECTED_STRING = "danginkgo@yahoo.com, Dan, Rusu, 500, [Pluralsight, LinkedIn Learning]";
+        @Test
+        public void negative_test() {
+            Assertions.assertEquals(
+                    false,
+                    userAccount.equals(otherUserAccount2));
+        }
 
-        Assertions.assertEquals(
-                EXPECTED_STRING,
-                userAccount.toString());
+        @Test
+        public void null_test() {
+            Assertions.assertEquals(
+                    false,
+                    userAccount.equals(null));
+        }
+
+        @Test
+        public void other_type_test() {
+            Assertions.assertEquals(
+                    false,
+                    userAccount.equals(100));
+        }
     }
-
-    @Test
-    public void equals_positive_test(){
-        Assertions.assertEquals(
-                true,
-                userAccount.equals(otherUserAccount1));
-    }
-
-    @Test
-    public void equals_negative_test(){
-        Assertions.assertEquals(
-                false,
-                userAccount.equals(otherUserAccount2));
-    }
-
-    @Test
-    public void equals_null_test(){
-        Assertions.assertEquals(
-                false,
-                userAccount.equals(null));
-    }
-
-    @Test
-    public void equals_other_type_test(){
-        Assertions.assertEquals(
-                false,
-                userAccount.equals(100));
-    }
-
 }
