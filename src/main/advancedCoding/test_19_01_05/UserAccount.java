@@ -5,6 +5,11 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
 
+
+/*
+Homework!
+Change constructors to use UserData. Rerun unit tests - GREEN!!!
+ */
 public final class UserAccount {
 
     private String email;

@@ -1,24 +1,24 @@
 package test.advancedCoding.test_19_01_05;
 
-import main.advancedCoding.test_19_01_05.Failures.UserAccountCatalogAddException;
-import main.advancedCoding.test_19_01_05.Failures.UserAccountCatalogFindException;
+import main.advancedCoding.test_19_01_05.UserAccountFailures.AddUserAccountException;
+import main.advancedCoding.test_19_01_05.UserAccountFailures.FindUserAccountException;
 import main.advancedCoding.test_19_01_05.Subscription;
 import main.advancedCoding.test_19_01_05.UserAccount;
-import main.advancedCoding.test_19_01_05.UserAccountCatalog;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import main.advancedCoding.test_19_01_05.UniqueUserAccountCatalog;
+import main.advancedCoding.test_19_01_05.UserAccountFailures.RemoveUserAccountException;
+import org.junit.jupiter.api.*;
 
 import java.util.List;
 import java.util.TreeSet;
+
 
 public class UserAccountCatalogTest {
 
     TreeSet<Subscription> subscriptions;
     UserAccount userAccount;
+    UserAccount userAccount2;
 
-    UserAccountCatalog userAccountCatalog = new UserAccountCatalog();
+    UniqueUserAccountCatalog userAccountCatalog = new UniqueUserAccountCatalog();
 
     @BeforeEach
     public void beforeEach() {
@@ -35,6 +35,14 @@ public class UserAccountCatalogTest {
                 "1234",
                 500,
                 subscriptions);
+
+        userAccount2 = new UserAccount(
+                "danginkgo@gmail.com",
+                "Dan",
+                "Rusu",
+                "1234444",
+                5000,
+                subscriptions);
     }
 
     @Test
@@ -50,7 +58,7 @@ public class UserAccountCatalogTest {
     @Nested
     class AddUserAccountTest {
         @Test
-        public void size_test() throws UserAccountCatalogAddException {
+        public void size_test() throws AddUserAccountException {
 
             userAccountCatalog.addUserAccount(userAccount);
             List<UserAccount> userAccounts = userAccountCatalog.getUserAccounts();
@@ -67,7 +75,7 @@ public class UserAccountCatalogTest {
         }
 
         @Test
-        public void added_new_user_is_the_last_in_catalog_test() throws UserAccountCatalogAddException {
+        public void added_new_user_is_the_last_in_catalog_test() throws AddUserAccountException {
             userAccountCatalog.addUserAccount(userAccount);
             List<UserAccount> userAccounts = userAccountCatalog.getUserAccounts();
 
@@ -77,10 +85,10 @@ public class UserAccountCatalogTest {
         }
 
         @Test
-        public void added_existing_is_the_last_in_catalog_test() throws UserAccountCatalogAddException {
+        public void added_existing_is_the_last_in_catalog_test() throws AddUserAccountException {
             userAccountCatalog.addUserAccount(userAccount);
             Assertions.assertThrows(
-                    UserAccountCatalogAddException.class,
+                    AddUserAccountException.class,
                     () -> userAccountCatalog.addUserAccount(userAccount));
         }
 
@@ -91,7 +99,7 @@ public class UserAccountCatalogTest {
     class ContainsTest{
 
         @Test
-        public void positive_test() throws UserAccountCatalogAddException {
+        public void positive_test() throws AddUserAccountException {
             userAccountCatalog.addUserAccount(userAccount);
 
             Assertions.assertEquals(
@@ -112,7 +120,7 @@ public class UserAccountCatalogTest {
     class FindTest{
 
         @Test
-        public void positive_test() throws UserAccountCatalogAddException, UserAccountCatalogFindException {
+        public void positive_test() throws AddUserAccountException, FindUserAccountException {
             userAccountCatalog.addUserAccount(userAccount);
 
             Assertions.assertEquals(
@@ -123,10 +131,43 @@ public class UserAccountCatalogTest {
         @Test
         public void negative_test(){
             Assertions.assertThrows(
-                    UserAccountCatalogFindException.class,
+                    FindUserAccountException.class,
                     () -> userAccountCatalog.find(userAccount));
         }
     }
 
+
+    @Nested
+    class RemoveUserAccount{
+        @Test
+        public void posive_test() throws AddUserAccountException {
+
+            userAccountCatalog.addUserAccount(userAccount);
+            userAccountCatalog.removeUserAccount(userAccount);
+
+            Assertions.assertEquals(
+                    0,
+                    userAccountCatalog.getUserAccounts().size(),
+                    "accounts size is not 0");
+        }
+
+        @Test
+        public void negative_empty_catalog_test(){
+            Assertions.assertThrows(RemoveUserAccountException.class,
+                    () -> userAccountCatalog.removeUserAccount(userAccount));
+
+        }
+
+
+        @Test
+        public void negative_not_empty_catalog_test() throws AddUserAccountException {
+
+            userAccountCatalog.addUserAccount(userAccount);
+
+            Assertions.assertThrows(RemoveUserAccountException.class,
+                    () -> userAccountCatalog.removeUserAccount(userAccount2));
+
+        }
+    }
 
 }
