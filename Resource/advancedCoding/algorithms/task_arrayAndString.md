@@ -40,7 +40,7 @@ Lowercase: 4
 
 Digit: 1
 
-Special Character: 6
+Special Character: 5
 
 ```
 chars looping:
