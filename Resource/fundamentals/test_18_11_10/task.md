@@ -33,7 +33,7 @@
 
        ... getPrice(Movie movie){ ... }
 
-    so that you can use it form anywhere like this:
+    so that you can use it from anywhere like this:
 
     float price = MovieUtils.getPrice(movieInstance);
 
@@ -42,9 +42,9 @@
 
 4. Create a class named MovieTest with a main method within.
 
-    - Create a list of 10 movies with the following information:
+    a) Create a list of 10 movies with the following information:
 
-          Venom, 20018, 10
+          Venom, 2018, 10
           Aquaman, 2018, 8
           Mile 22, 2018, 9
           Blade Runner 2049, 2017, 9
@@ -61,7 +61,7 @@
    #### 15 POINTS
 
 
-   - Create a method that uses a movie list and gets the average price for movies in 2018 and 2016.
+   b) Create a method that uses a movie list and gets the average price for movies in 2018 and 2016.
 
      Call created method in main for the movie list from a).
      Print result.
@@ -70,7 +70,7 @@
    #### 25 POINTS
 
 
-   - Create a method that filters a list by prices bigger than a given value
+   c) Create a method that filters a list by prices bigger than a given value
    (it will return a list with all movies with prices bigger than the specified value).
 
      Use the method from MovieUtils to get the price for each movie.
