@@ -8,7 +8,7 @@
  
     name
 
-    year (of release, int)
+    year of release (int)
 
     ticketPrice (float)
 
