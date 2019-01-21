@@ -16,6 +16,7 @@ public class CharStatisticsTest {
     CharStatistics charStatistics2;
     CharStatistics emptyStatitstics;
 
+
     @BeforeEach
     public void beforeEach(){
         text1 = "geeks for geeks121";
@@ -27,11 +28,13 @@ public class CharStatisticsTest {
         emptyStatitstics = new CharStatistics(emptyText);
     }
 
+
     @Test
     public void letter_test1(){
         Assertions.assertEquals(13,
                 charStatistics1.getStatstics().getLetter());
     }
+
 
     @Test
     public void letter_test2(){
@@ -45,11 +48,13 @@ public class CharStatisticsTest {
                 charStatistics1.getStatstics().getUppercase());
     }
 
+
     @Test
     public void uppercase_letter_test2(){
         Assertions.assertEquals(2,
                 charStatistics2.getStatstics().getUppercase());
     }
+
 
     @Test
     public void lowercase_letter_test1(){
@@ -57,11 +62,13 @@ public class CharStatisticsTest {
                 charStatistics1.getStatstics().getLowercase());
     }
 
+
     @Test
     public void lowercase_letter_test2(){
         Assertions.assertEquals(4,
                 charStatistics2.getStatstics().getLowercase());
     }
+
 
     @Test
     public void vowel_letter_test1(){
@@ -69,11 +76,13 @@ public class CharStatisticsTest {
                 charStatistics1.getStatstics().getVowel());
     }
 
+
     @Test
     public void vowel_letter_test2(){
         Assertions.assertEquals(2,
                 charStatistics2.getStatstics().getVowel());
     }
+
 
     @Test
     public void consonant_letter_test1(){
@@ -86,6 +95,7 @@ public class CharStatisticsTest {
         Assertions.assertEquals(4,
                 charStatistics2.getStatstics().getConsonant());
     }
+
 
     @Test
     public void digit_letter_test1(){
@@ -106,11 +116,13 @@ public class CharStatisticsTest {
                 charStatistics1.getStatstics().getSpecialCharacter());
     }
 
+
     @Test
     public void specialChar_letter_test2(){
         Assertions.assertEquals(5,
                 charStatistics2.getStatstics().getSpecialCharacter());
     }
+
 
     @Test
     public void empty_text_test(){
@@ -140,5 +152,4 @@ public class CharStatisticsTest {
         Assertions.assertEquals(0,
                 emptyStatitstics.getStatstics().getSpecialCharacter());
     }
-
 }

@@ -19,6 +19,7 @@ public class Triplets {
             1, 2, 3, 0, 3, 4, 7, 8, 1, 9, 2, 5, 8, 7, 1, 8, 0, 7, 7
     );
 
+
     // [ [1, 2, 3], [2, 3, 8], ... , [1, 1, 6] ]
     private List<List<Integer>> getTriplets(List<Integer> integerList) {
 
@@ -29,6 +30,7 @@ public class Triplets {
 
         return triplets;
     }
+
 
     private int getListSum(List<Integer> integers) {
 
@@ -50,6 +52,7 @@ public class Triplets {
                 .count();
     }
 
+
     private Predicate<List<Integer>> isTripletSumLessThan(int sumLimit) {
 
         return triplet -> getListSum(triplet) < sumLimit;
@@ -65,9 +68,9 @@ public class Triplets {
         return filteredTriplets;
     }
 
+
     public Predicate<List<Integer>> isSumOfFirstTwoEqualsWithTheThird =
         triplet -> triplet.get(0) + triplet.get(1) == triplet.get(2);
-
 
 
     @Test
@@ -77,6 +80,7 @@ public class Triplets {
 
         System.out.println(getCountOfTripletsWithSumLessThan(7));
     }
+
 
     @Test
     public void getTripletsWhereThirdIsTheSumOfFirstTwo_test() {

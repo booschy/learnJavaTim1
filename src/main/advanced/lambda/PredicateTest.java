@@ -62,6 +62,7 @@ public class PredicateTest {
 
     }
 
+
     @BeforeEach
     public void beforeEach(){
 
@@ -73,7 +74,6 @@ public class PredicateTest {
 
         products = List.of(vcr, cdPlayer, photoCamera, tv, refrigerator);
     }
-
 
 
     @Test
@@ -131,6 +131,7 @@ public class PredicateTest {
 
     }
 
+
     public List<Product> filterListUsingStreams(List<Product> products) {
 
         return products.stream()
@@ -139,6 +140,7 @@ public class PredicateTest {
                 .filter(isProductMoreExpensiveThan15)
                 .collect(toList());
     }
+
 
     public List<Product> filterProductsWithWarrantyMoreThan2AndLessThan5(List<Product> products) {
         // classic itteration
@@ -162,6 +164,7 @@ public class PredicateTest {
 
         return hasWarrantyLessThan5Years.and(hasWarrantyMoreThan2Years);
     }
+
 
     public static void printPriceInfo(
             Product vcr,

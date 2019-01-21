@@ -32,13 +32,10 @@ public class ConstructorTest {
     }
 
 
-
     public float convertToMeter(float fromLength, LengthUnit fromUnit){
 
         return fromLength * fromUnit.getToMeterConversionFactor();
     }
-
-
 
     // homework
     // Create a method that can convert a length from a specified LenghtUnit to another one

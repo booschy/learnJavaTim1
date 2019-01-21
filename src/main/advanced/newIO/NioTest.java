@@ -17,9 +17,9 @@ public class NioTest {
 
         Path luckyFolderPath = Paths.get(
                 System.getProperty("user.dir"), //  C:\Users\dan.rusu.IN\Desktop\SDA\learnJava
-                "Resource",
-                "Fundamentals",
-                "Lucky");
+                "RESOURCE",
+                "FUNDAMENTALS",
+                "LUCKY");
 
         Path luckyTask = luckyFolderPath.resolve("_task.txt");
         System.out.println("luckyTask.getParent: " + luckyTask.getParent());
@@ -35,10 +35,10 @@ public class NioTest {
 
 
         System.out.println("luckyTask : " +luckyTask);
-        // C:\Users\dan.rusu.IN\Desktop\SDA\learnJava\Resource\Fundamentals\Lucky\_task.txt
+        // C:\Users\dan.rusu.IN\Desktop\SDA\learnJava\RESOURCE\FUNDAMENTALS\LUCKY\_task.txt
 
         System.out.println("luckyTaskCopy : " +luckyTaskCopy);
-        //C:\Users\dan.rusu.IN\Desktop\SDA\learnJava\Resource\Fundamentals\Lucky\output\_taskCopy.txt
+        //C:\Users\dan.rusu.IN\Desktop\SDA\learnJava\RESOURCE\FUNDAMENTALS\LUCKY\output\_taskCopy.txt
 
         System.out.println("File size in bytes: " + Files.size(luckyTask));
 

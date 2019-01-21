@@ -4,9 +4,11 @@ public abstract class VehicleAbstract {
 
     private int maxSpeed;
 
+
     public VehicleAbstract(int maxSpeed) {
         this.maxSpeed = maxSpeed;
     }
+
 
     public int getMaxSpeed() {
         return maxSpeed;
@@ -22,6 +24,7 @@ public abstract class VehicleAbstract {
     public static String startVechicle(){
         return "Vehicle started";
     }
+
 
     // no body -> class must be abstarct
     public abstract void move();

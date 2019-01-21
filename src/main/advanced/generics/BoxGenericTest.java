@@ -1,7 +1,7 @@
 package main.advanced.generics;
 
-import main.fundamentals.bank.Employer;
-import main.fundamentals.bank.Person;
+import main.fundamentalsCoding.bank.Employer;
+import main.fundamentalsCoding.bank.Person;
 import org.junit.jupiter.api.Test;
 
 public class BoxGenericTest {
@@ -14,7 +14,7 @@ public class BoxGenericTest {
                 100);
 
         BoxGeneric<Person, Integer> yourBox = new BoxGeneric<>(
-                new Person("Ada", Employer.Azets, "Timisoara"),
+                new Person("Ada", Employer.AZETS, "Timisoara"),
                 200);
 
 

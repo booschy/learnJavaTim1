@@ -48,6 +48,7 @@ public class UserAccountTest {
                 subscriptions);
     }
 
+
     @Nested
     class ToStringTest {
 
@@ -71,6 +72,7 @@ public class UserAccountTest {
                     userAccount.toString());
         }
     }
+
 
     @Nested
     class EqualsTest {

@@ -32,6 +32,7 @@ public class ThrowablesTest {
 
     }
 
+
     @Test
     public void assertion_error_test() throws IOException {
 
@@ -65,6 +66,7 @@ public class ThrowablesTest {
         System.out.println(divide(5, 0));
     }
 
+
     @Test
     public void divide_by_test() {
 
@@ -78,7 +80,7 @@ public class ThrowablesTest {
             return number / divider;
 
         } catch (Exception e) {
-            System.out.println("Custom message: " + e);
+            System.out.println("Custom MESSAGE: " + e);
             throw e;
         }
 

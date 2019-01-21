@@ -10,6 +10,7 @@ public class Person {
 
     private boolean isMale;
 
+
     // constructors
     public Person(String firstName,
                   String lastName,
@@ -24,9 +25,11 @@ public class Person {
         //this.isMale = male;
     }
 
+
     public Person(String firstName, String lastName) {
         this(firstName, lastName, 0, false);
     }
+
 
     public Person(String firstName, String lastName, int age) {
         this.firstName = firstName;
@@ -38,31 +41,38 @@ public class Person {
         // this(firstName, lastName, age, true);
     }
 
+
     // getters
     public String getFirstName() {
         return firstName;
     }
 
+
     public String getLastName() {
         return lastName;
     }
+
 
     public int getAge() {
         return age;
     }
 
+
     public boolean isMale() {
         return isMale;
     }
+
 
     // setters
     public void setAge(int age) {
         this.age = age;
     }
 
+
     public void setMale(boolean male) {
         isMale = male;
     }
+
 
     @Override
     public String toString(){
@@ -74,6 +84,7 @@ public class Person {
     public String getFullName(){
         return "Full name: " + firstName + " " +  lastName;
     }
+
 
     public void growAge(){
         age++;

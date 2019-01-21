@@ -97,6 +97,7 @@ public class BookStoreTest {
         // Created a BookStore with 10 book1, 5 book2
     }
 
+
     @Nested
     class GenerateBookIdTest {
 
@@ -175,6 +176,7 @@ public class BookStoreTest {
         }
 
     }
+
 
     @Nested
     class GetQuantityTest {
@@ -332,6 +334,7 @@ public class BookStoreTest {
         }
     }
 
+
     @Nested
     class SearchBookByAuthor {
 
@@ -394,6 +397,7 @@ public class BookStoreTest {
                     foundBookInfoList.size());
         }
     }
+
 
     @Nested
     class SearchBookByNameAndAuthor {
@@ -526,6 +530,7 @@ public class BookStoreTest {
 
     }
 
+
     @Nested
     class GetCheapestBookTest{
 
@@ -584,7 +589,7 @@ public class BookStoreTest {
         BookStore bookStore = new BookStore();
 
         bookStore.addBook(Paths.get(
-                "Resource/Advanced/bookStore/books.txt"));
+                "RESOURCE/Advanced/bookStore/books.txt"));
 
         bookStore.addBook(
                 new Book("Twilight",
@@ -634,6 +639,7 @@ public class BookStoreTest {
 
     }
 
+
     @Nested
     class GetTotalBooksQuantityTest {
 
@@ -666,6 +672,7 @@ public class BookStoreTest {
         }
 
     }
+
 
     @Nested
     class GetTotalPriceTest {

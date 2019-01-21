@@ -10,6 +10,7 @@ import static java.util.stream.Collectors.toList;
 
 public class CarTest {
 
+
     public static void main(String[] args) {
         List<Car> cars = List.of(
                 new Car("Audi A6", 240),
@@ -61,5 +62,4 @@ public class CarTest {
         cars.forEach(CarConsumer);
         //cars.forEach(System.out::println);
     }
-
 }

@@ -35,6 +35,7 @@ public class Book {
                 price);
     }
 
+
     public Book(
             String name,
             String author,
@@ -53,21 +54,26 @@ public class Book {
         return name;
     }
 
+
     public String getAuthor() {
         return author;
     }
+
 
     public int getYear() {
         return year;
     }
 
+
     public BookGenre getGenre() {
         return genre;
     }
 
+
     public float getPrice() {
         return price;
     }
+
 
     public void setPrice(float price) {
         this.price = price;

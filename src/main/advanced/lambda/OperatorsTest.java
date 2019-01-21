@@ -1,7 +1,7 @@
 package main.advanced.lambda;
 
-import main.fundamentals.bank.Employer;
-import main.fundamentals.bank.Person;
+import main.fundamentalsCoding.bank.Employer;
+import main.fundamentalsCoding.bank.Person;
 
 import java.util.List;
 import java.util.function.BinaryOperator;
@@ -61,9 +61,9 @@ public class OperatorsTest {
         System.out.println("Division of 10 by 3" + divide.apply(10f, 3f));
 
 
-        Person employeeFromTm = new Person("Mihai", Employer.Visma, "Timisoara");
-        Person employeeFromSb = new Person("Carmen", Employer.Visma, "Sibiu");
-        Person employeeFromBuc = new Person("Carmen", Employer.Visma, "Bucuresti");
+        Person employeeFromTm = new Person("Mihai", Employer.VISMA, "Timisoara");
+        Person employeeFromSb = new Person("Carmen", Employer.VISMA, "Sibiu");
+        Person employeeFromBuc = new Person("Carmen", Employer.VISMA, "Bucuresti");
 
         BinaryOperator<Person> getFirstPerson = (person1, person2) -> {
 

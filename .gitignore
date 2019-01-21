@@ -1,4 +1,5 @@
-# IJ files
+# binaries
 out/
 
+# workspace preferences
 .idea/workspace.xml

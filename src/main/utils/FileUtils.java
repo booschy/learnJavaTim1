@@ -1,6 +1,6 @@
 package main.utils;
 
-import main.fundamentals.bank.ResourceDirectories;
+import main.fundamentalsCoding.bank.ResourceDirectory;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -21,7 +21,7 @@ public interface FileUtils {
     }
 
 
-    static Path getLocalPath(ResourceDirectories... moreDirs) {
+    static Path getLocalPath(ResourceDirectory... moreDirs) {
 
         return Paths.get(
 
@@ -63,7 +63,7 @@ public interface FileUtils {
     }
 
 
-    public static <T> void write(
+    static <T> void write(
             Path outFilePath,
             T objectToWrite) throws Exception {
 
@@ -101,7 +101,7 @@ public interface FileUtils {
     }
 
 
-    public static <T> T read(Path inFilePath, T returnedObject) throws Exception {
+    static <T> T read(Path inFilePath, T returnedObject) throws Exception {
 
         try (
                 FileInputStream fis = new FileInputStream(inFilePath.toFile());

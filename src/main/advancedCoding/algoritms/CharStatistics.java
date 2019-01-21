@@ -13,13 +13,16 @@ public class CharStatistics {
     private String text;
     private Statistics statstics;
 
+
     private final List<Character> VOWELS = List.of(
             'a', 'e', 'i', 'o', 'u',
             'A', 'E', 'I', 'O', 'U');
 
+
     public CharStatistics(String text) {
         this.text = text;
     }
+
 
     public Statistics getStatstics() {
 
@@ -32,6 +35,7 @@ public class CharStatistics {
                 getDigitStatistics(),
                 getSpecialCharacterStatistics());
     }
+
 
     // common algorithm for all counters
     // this method can be changed with getLetterCountForCondition
@@ -47,6 +51,7 @@ public class CharStatistics {
         }
         return letterCount;
     }
+
 
     private int getLetterCountForCondition(Predicate<Character> letterCondition) {
 
@@ -75,35 +80,43 @@ public class CharStatistics {
         return (int)counter;
     }
 
+
     private IntFunction<Character> intToCharacter =
         intCharacter -> Character.valueOf((char)intCharacter);
+
 
     private int getSpecialCharacterStatistics() {
         return getLetterCountForCondition(character -> isSpecialChar(character));
     }
 
+
     private int getDigitStatistics() {
         return getLetterCountForCondition(this::isDigit);
     }
+
 
     private int getUpperCaseStatistics() {
 
         return getLetterCountForCondition(this::isUppercaseLetter);
     }
 
+
     private int getLowerCaseStatistics() {
 
         return getLetterCountForCondition(this::isLowercaseLetter);
     }
 
+
     private int getConsonantStatistics() {
         return getLetterCountForCondition(this::isConsonant);
     }
+
 
     private int getVowelStatistics() {
 
         return getLetterCountForCondition(this::isVowel);
     }
+
 
     private int getLetterStatistics() {
 
@@ -114,23 +127,28 @@ public class CharStatistics {
       return getLetterCountForCondition(character -> isLetter(character));
     }
 
+
     // letter conditions
     private boolean isLetter(char character){
         return isLowercaseLetter(character) || isUppercaseLetter(character);
 
     }
 
+
     private boolean isLowercaseLetter(char character) {
         return character >= 'a' && character <= 'z';
     }
+
 
     private boolean isUppercaseLetter(char character) {
         return character >= 'A' && character <= 'Z';
     }
 
+
     private boolean isVowel(char character){
         return VOWELS.contains(character);
     }
+
 
     private boolean isConsonant(char character){
         final boolean isNotVowel = false == VOWELS.contains(character);
@@ -138,9 +156,11 @@ public class CharStatistics {
         return isLetter(character) && isNotVowel;
     }
 
+
     private boolean isDigit(char character){
         return '0' <= character && character <='9';
     }
+
 
     private boolean isSpecialChar(char character){
         final boolean isNotLetter = ! isLetter(character);

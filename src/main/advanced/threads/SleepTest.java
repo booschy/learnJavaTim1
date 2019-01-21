@@ -2,6 +2,7 @@ package main.advanced.threads;
 
 public class SleepTest {
 
+
     public static void main(String[] args) throws InterruptedException {
 
         System.out.println("Main thread starts");
@@ -19,5 +20,4 @@ public class SleepTest {
 
         System.out.println("Main thread ends");
     }
-
 }

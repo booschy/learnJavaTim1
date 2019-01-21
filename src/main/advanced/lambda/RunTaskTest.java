@@ -2,6 +2,7 @@ package main.advanced.lambda;
 
 public class RunTaskTest {
 
+
     public static void main(String[] args) {
 
         execute(new RunTask());

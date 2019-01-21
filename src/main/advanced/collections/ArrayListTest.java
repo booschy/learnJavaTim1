@@ -1,7 +1,7 @@
 package main.advanced.collections;
 
-import main.fundamentals.bank.Employer;
-import main.fundamentals.bank.Person;
+import main.fundamentalsCoding.bank.Employer;
+import main.fundamentalsCoding.bank.Person;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -20,9 +20,9 @@ public class ArrayListTest {
 
         // fixed size
         listOfPersons = Arrays.asList(
-                new Person("Ada", Employer.Azets, "Timisoara"),
-                new Person("Maria", Employer.Azets, "Timisoara"),
-                new Person("Tania", Employer.Azets, "Timisoara")
+                new Person("Ada", Employer.AZETS, "Timisoara"),
+                new Person("Maria", Employer.AZETS, "Timisoara"),
+                new Person("Tania", Employer.AZETS, "Timisoara")
         );
 
         // fixed size

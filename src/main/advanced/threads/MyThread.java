@@ -2,6 +2,7 @@ package main.advanced.threads;
 
 public class MyThread extends Thread {
 
+
     @Override
     public void run() {
 

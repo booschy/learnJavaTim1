@@ -47,6 +47,4 @@ public class Pactice {
                 .toArray(Integer[]::new);
         System.out.println(Arrays.toString(integersArray8));
     }
-
-
 }

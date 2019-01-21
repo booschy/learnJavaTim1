@@ -13,6 +13,7 @@ public class OptionalTest {
 
     private List<Product> products;
 
+
     @BeforeEach
     public void before() {
 
@@ -49,12 +50,14 @@ public class OptionalTest {
 
     }
 
+
     public void printOptionalNameOrElse(Optional<Product> optionalProduct) {
 
         System.out.println(optionalProduct
                 .orElse(new Product("No product", 0, 0))
                 .getName());
     }
+
 
     public void printOptionalNameStream(Optional<Product> optionalProduct) {
 
@@ -74,6 +77,7 @@ public class OptionalTest {
         }
     }
 
+
     public Product getVcr(boolean isProductNeeeded) {
 
         Product product = null;
@@ -84,7 +88,6 @@ public class OptionalTest {
 
         return product;
     }
-
 
 
     @Test

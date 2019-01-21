@@ -2,6 +2,7 @@ package main.advanced.exceptions;
 
 public class CarCrashException extends Exception{
 
+
     public CarCrashException() {
         super("TOO MUCH SPEED!");
     }

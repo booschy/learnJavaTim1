@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-/* Homework code + unit tests
+/* HOMEWORK code + unit tests
 -remove user account by email
 - add subscription
 -remove subscription
@@ -22,9 +22,11 @@ public class UniqueUserAccountCatalog extends UserAccountCatalog{
 
     Map<Subscription, UserData> subscriptionInfo;
 
+
     public Map<Subscription, UserData> getSubscriptionInfo() {
         return subscriptionInfo;
     }
+
 
     @Override
     public void addUserAccount(UserAccount userAccount) throws AddUserAccountException {
@@ -33,6 +35,7 @@ public class UniqueUserAccountCatalog extends UserAccountCatalog{
         }
         userAccounts.add(userAccount);
     }
+
 
     @Override
     public boolean contains(UserAccount otherUserAccount){
@@ -43,6 +46,7 @@ public class UniqueUserAccountCatalog extends UserAccountCatalog{
         }
         return false;
     }
+
 
     @Override
     public UserAccount find(UserAccount otherUserAccount) throws FindUserAccountException {
@@ -56,15 +60,18 @@ public class UniqueUserAccountCatalog extends UserAccountCatalog{
         throw new FindUserAccountException();
     }
 
+
     @Override
     public void removeUserAccount(UserAccount userAccount) {
 
     }
 
+
     @Override
     public void addSubscription(Subscription subscription) {
 
     }
+
 
     @Override
     public void removeSubscription(Subscription subscription) {

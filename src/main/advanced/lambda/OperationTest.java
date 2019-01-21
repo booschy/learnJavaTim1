@@ -7,6 +7,7 @@ import java.util.function.Function;
 
 public class OperationTest {
 
+
     public static void main(String[] args) {
 
         //final int sum = new Sum().operate(10, 20);
@@ -66,6 +67,7 @@ public class OperationTest {
 
 
     }
+
 
     private static <T> void printOperationResult(
             T first,

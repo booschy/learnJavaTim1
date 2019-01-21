@@ -44,7 +44,7 @@ public class BookStoreApplication {
         System.out.println("--------------------------------------------------");
 
         bookStore.addBook(Paths.get(
-                "Resource/Advanced/bookStore/books.txt"));
+                "RESOURCE/Advanced/bookStore/books.txt"));
 
         System.out.println(bookStore);
 
@@ -54,10 +54,5 @@ public class BookStoreApplication {
         System.out.println("#5 SEARCHES----------------------------------------");
         // TODO HOMEWORK
 
-
-
     }
-
-
-
 }

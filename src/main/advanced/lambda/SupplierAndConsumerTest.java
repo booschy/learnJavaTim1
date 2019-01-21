@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 
 public class SupplierAndConsumerTest {
 
+
     private static String info = "SupplierAndConsumerTest";
 
 

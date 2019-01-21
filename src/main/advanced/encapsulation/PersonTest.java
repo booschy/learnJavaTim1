@@ -26,11 +26,6 @@ public class PersonTest {
 
         employee.setAge(40);
         System.out.println(employee);
-
-
-
-
-
     }
 
 

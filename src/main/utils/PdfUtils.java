@@ -48,7 +48,7 @@ public interface PdfUtils {
     }
 
 
-    public static int getPagesCount(String filename) throws IOException {
+    static int getPagesCount(String filename) throws IOException {
 
         PDDocument document = PDDocument.load(new File(filename));
 

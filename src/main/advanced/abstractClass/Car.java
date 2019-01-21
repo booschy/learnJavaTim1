@@ -11,6 +11,7 @@ public class Car
 
     private boolean isConvertible;
 
+
     public Car(int maxSpeed, String name, boolean isConvertible) {
         super(maxSpeed);
         this.isConvertible = isConvertible;
@@ -41,8 +42,9 @@ public class Car
         System.out.println(Startable.message);
     }
 
+
     @Override
     public void stop(int secondsDelay) {
-        System.out.println(Stopable.message + " after " + + secondsDelay + " seconds");
+        System.out.println(Stopable.MESSAGE + " after " + + secondsDelay + " seconds");
     }
 }

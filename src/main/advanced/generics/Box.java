@@ -11,9 +11,11 @@ public class Box {
         this.item2 = item2;
     }
 
+
     public Object getItem2() {
         return item2;
     }
+
 
     public Object getItem() {
         return item;

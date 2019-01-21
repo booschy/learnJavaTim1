@@ -12,6 +12,7 @@ public class BookStoreStatus {
     private Map<BookGenre, Integer> totalQuantityByGenreMap;
     private Map<BookGenre, Float> totalPriceByGenreMap;
 
+
     public BookStoreStatus(BookStore bookStore) {
 
         this.booksQuantity = bookStore.getTotalBooksQuantity();

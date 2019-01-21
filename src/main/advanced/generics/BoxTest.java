@@ -1,7 +1,7 @@
 package main.advanced.generics;
 
-import main.fundamentals.bank.Employer;
-import main.fundamentals.bank.Person;
+import main.fundamentalsCoding.bank.Employer;
+import main.fundamentalsCoding.bank.Person;
 import org.junit.jupiter.api.Test;
 
 public class BoxTest {
@@ -12,7 +12,7 @@ public class BoxTest {
         Box myBox = new Box("string box", 100);
 
         Box yourBox = new Box(
-                new Person("Ada", Employer.Azets, "Timisoara"),
+                new Person("Ada", Employer.AZETS, "Timisoara"),
                 200);
 
         System.out.println("myBox:");

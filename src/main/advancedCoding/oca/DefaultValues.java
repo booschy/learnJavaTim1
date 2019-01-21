@@ -23,7 +23,6 @@ public class DefaultValues {
     String s;
 
 
-
     @Test
     public void primitives_fields_test(){
 

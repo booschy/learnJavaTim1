@@ -2,6 +2,7 @@ package main.advanced.threads;
 
 public class MyThreadTest {
 
+
     public static void main(String[] args) throws InterruptedException {
 
         System.out.println("<<< start main thread");

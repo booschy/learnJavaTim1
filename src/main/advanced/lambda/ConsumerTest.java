@@ -4,6 +4,7 @@ import java.util.List;
 
 public class ConsumerTest {
 
+
     private static class Number{
 
         public int value;
@@ -17,6 +18,7 @@ public class ConsumerTest {
             return "" + value;
         }
     }
+
 
     public static void main(String[] args) {
 

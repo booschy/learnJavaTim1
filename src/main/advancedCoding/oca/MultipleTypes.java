@@ -4,15 +4,16 @@ DON'T DO THIS !!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 package main.advancedCoding.oca;
 
+
 // cannot be accesses directly from outside
 class OtherMultipleTypes {
 }
+
 
 // cannot be accesses directly from outside
 interface Executable {
     void execute();
 }
-
 
 
 public class MultipleTypes {

@@ -1,7 +1,7 @@
 package main.advanced.lambda;
 
-import main.fundamentals.bank.Employer;
-import main.fundamentals.bank.Person;
+import main.fundamentalsCoding.bank.Employer;
+import main.fundamentalsCoding.bank.Person;
 
 import java.util.function.BiFunction;
 import java.util.function.Function;
@@ -10,9 +10,9 @@ public class FuntionTest {
 
     public static void main(String[] args) {
 
-        Person person1 = new Person("Anda", Employer.Azets, "Timisoara");
-        Person person2 = new Person("Mihai", Employer.Visma, "Timisoara");
-        Person person3 = new Person("Carmen", Employer.Visma, "Sibiu");
+        Person person1 = new Person("Anda", Employer.AZETS, "Timisoara");
+        Person person2 = new Person("Mihai", Employer.VISMA, "Timisoara");
+        Person person3 = new Person("Carmen", Employer.VISMA, "Sibiu");
 
         // FUNCTION
         Function<Person, String> getPersonInfo = person -> {
@@ -46,7 +46,7 @@ public class FuntionTest {
                 if(person.getLocation().equals(location)){
                     return person.getEmployer();
                 }
-                return Employer.Unknown;
+                return Employer.UNKNOWN;
             };
 
         System.out.println("Employer of person1, if person1 lives in Timisoara, else Unknown: "

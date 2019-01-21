@@ -1,8 +1,8 @@
 package main.advanced.streams;
 
-import main.fundamentals.bank.Employer;
-import main.fundamentals.bank.Person;
-import main.fundamentals.bank.Persons;
+import main.fundamentalsCoding.bank.Employer;
+import main.fundamentalsCoding.bank.Person;
+import main.fundamentalsCoding.bank.Persons;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -35,7 +35,7 @@ public class BasicStreamTest {
     public void before() throws IOException {
 
         employees = Persons.fileToPersonList(
-                "Resource\\Fundamentals\\Bank\\employees.csv");
+                "RESOURCE\\FUNDAMENTALS\\BANK\\employees.csv");
 
     }
 
@@ -81,6 +81,7 @@ public class BasicStreamTest {
 
         return person.getLocation().equals(town);
     }
+
 
     public boolean isPersonFromTimisoara(Person person){
         return isPersonFromTown(person, "Timisoara");

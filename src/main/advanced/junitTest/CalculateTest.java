@@ -70,8 +70,8 @@ public class CalculateTest {
 
         @Test
         /* Requirement for Calculate.info method:
-        For a specified message the info method returns a formatted text
-        composed from the suffix "***INFO: " and the original message.
+        For a specified MESSAGE the info method returns a formatted text
+        composed from the suffix "***INFO: " and the original MESSAGE.
         */
         public void with_message_test() {
 

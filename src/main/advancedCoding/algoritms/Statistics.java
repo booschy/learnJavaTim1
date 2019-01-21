@@ -9,33 +9,41 @@ public class Statistics {
     int digit;
     int specialCharacter;
 
+
     public int getLetter() {
         return letter;
     }
+
 
     public int getVowel() {
         return vowel;
     }
 
+
     public int getConsonant() {
         return consonant;
     }
+
 
     public int getUppercase() {
         return uppercase;
     }
 
+
     public int getLowercase() {
         return lowercase;
     }
+
 
     public int getDigit() {
         return digit;
     }
 
+
     public int getSpecialCharacter() {
         return specialCharacter;
     }
+
 
     public Statistics(
             int letter,

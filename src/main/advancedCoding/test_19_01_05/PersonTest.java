@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 
 public class PersonTest {
 
+
     public static void main(String[] args) {
         List<Person> persons = List.of(
                 new Person("Doug", 21),

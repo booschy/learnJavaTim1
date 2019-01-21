@@ -10,7 +10,9 @@ public enum Subscription {
 
     COURSERA("Coursera", 450);
 
+
     private int price;
+
 
     private String subscriptionName;
     Subscription(String subscriptionName, int price) {
@@ -18,9 +20,11 @@ public enum Subscription {
         this.price = price;
     }
 
+
     public String getSubscriptionName() {
         return subscriptionName;
     }
+
 
     public int getPrice() {
         return price;

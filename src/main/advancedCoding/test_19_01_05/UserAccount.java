@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 
 
 /*
-Homework!
+HOMEWORK!
 Change constructors to use UserData. Rerun unit tests - GREEN!!!
  */
 public final class UserAccount {
@@ -18,6 +18,7 @@ public final class UserAccount {
     private String password;
     private int cashCredits;
     private TreeSet<Subscription> subscriptions;
+
 
     public UserAccount(String email,
                        String firstName,
@@ -34,6 +35,7 @@ public final class UserAccount {
         this.subscriptions = subscriptions;
     }
 
+
     public UserAccount(String email,
                        String firstName,
                        String secondName,
@@ -47,29 +49,36 @@ public final class UserAccount {
 
     }
 
+
     public String getEmail() {
         return email;
     }
+
 
     public String getFirstName() {
         return firstName;
     }
 
+
     public String getSecondName() {
         return secondName;
     }
+
 
     public String getPassword() {
         return password;
     }
 
+
     public int getCashCredits() {
         return cashCredits;
     }
 
+
     public TreeSet<Subscription> getSubscriptions() {
         return subscriptions;
     }
+
 
     @Override
     public boolean equals(Object other) {
@@ -88,6 +97,7 @@ public final class UserAccount {
         return false;
     }
 
+
     @Override
     public String toString() {
 
@@ -98,6 +108,7 @@ public final class UserAccount {
                 cashCredits + "",
                 getSubscriptionsText(subscriptions));
     }
+
 
     private String getSubscriptionsText(Set<Subscription> subscriptions) {
 

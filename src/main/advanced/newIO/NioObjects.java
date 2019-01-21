@@ -1,6 +1,6 @@
 package main.advanced.newIO;
 
-import main.fundamentals.dictionary.Translations;
+import main.fundamentalsCoding.dictionary.Translations;
 import main.utils.FileUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,10 +13,10 @@ import java.util.TreeMap;
 public class NioObjects {
 
 
-    final String wordsFileLanguageFrom = "Resource/Fundamentals/Dictionary/romanian_words.txt";
-    final String wordsFileLanguageTo = "Resource/Fundamentals/Dictionary/english_words.txt";
+    final String wordsFileLanguageFrom = "RESOURCE/FUNDAMENTALS/DICTIONARY/romanian_words.txt";
+    final String wordsFileLanguageTo = "RESOURCE/FUNDAMENTALS/DICTIONARY/english_words.txt";
 
-    final String roEnDictionaryFile = "Resource/Advanced/NewIO/roEnDictionary.map";
+    final String roEnDictionaryFile = "RESOURCE/Advanced/NewIO/roEnDictionary.map";
 
 
     Map<String, String> roEnDictionary;

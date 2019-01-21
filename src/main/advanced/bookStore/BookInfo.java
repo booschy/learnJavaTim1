@@ -5,18 +5,22 @@ public class BookInfo {
     Book book;
     Integer quantity;
 
+
     public BookInfo(Book book, Integer quantity) {
         this.book = book;
         this.quantity = quantity;
     }
 
+
     public Book getBook() {
         return book;
     }
 
+
     public Integer getQuantity() {
         return quantity;
     }
+
 
     @Override
     public boolean equals(Object otherBookInfoObj) {
@@ -27,6 +31,7 @@ public class BookInfo {
 
                 && (this.quantity == otherBookInfo.getQuantity());
     }
+
 
     @Override
     public String toString() {

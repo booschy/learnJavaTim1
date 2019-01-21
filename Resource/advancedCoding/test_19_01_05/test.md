@@ -80,15 +80,15 @@
 
 4. Which of the following methods can appear in an interface?
 
-    a.   private void message(){ System.out.println("message"); };
+    a.   private void MESSAGE(){ System.out.println("MESSAGE"); };
 
-    b.   public void message(){ System.out.println("message"); }
+    b.   public void MESSAGE(){ System.out.println("MESSAGE"); }
 
-    c.   public default void message();
+    c.   public default void MESSAGE();
 
-    d.   public static String message(){ return "message"; }
+    d.   public static String MESSAGE(){ return "MESSAGE"; }
 
-    e.   public static void message();
+    e.   public static void MESSAGE();
 
     f.   all above
 

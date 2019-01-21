@@ -8,6 +8,7 @@ import java.util.function.Consumer;
 
 public class MatrixLoop {
 
+
     private static class MatrixSum{
         private int value = 0;
 
@@ -19,6 +20,7 @@ public class MatrixLoop {
             this.value += value;
         }
     }
+
 
     public static void main(String[] args) {
 
@@ -98,6 +100,4 @@ public class MatrixLoop {
             }
         }
     }
-
-
 }

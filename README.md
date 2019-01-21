@@ -1,5 +1,5 @@
 # learnJava
-### Java Fundamentals Practice - repository for SDA training.
+### SDA training - Java Tim1
 
 
 #### Set up environment - download and install the following:

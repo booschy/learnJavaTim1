@@ -1,7 +1,7 @@
 package main.advanced.collections;
 
-import main.fundamentals.bank.Employer;
-import main.fundamentals.bank.Person;
+import main.fundamentalsCoding.bank.Employer;
+import main.fundamentalsCoding.bank.Person;
 
 import java.util.*;
 
@@ -28,14 +28,14 @@ public class MapTest {
         System.out.println("Map type: " + personMap.getClass().getName());
 
         // add elements
-        personMap.put(123, new Person("Mary", Employer.Azets, "Timisoara"));
+        personMap.put(123, new Person("Mary", Employer.AZETS, "Timisoara"));
         personMap.put(589, new Person("Yvone", Employer.IBM, "Timisoara"));
-        personMap.put(7, new Person("Robert", Employer.Visma, "Timisoara"));
+        personMap.put(7, new Person("Robert", Employer.VISMA, "Timisoara"));
         // same value for different keys
-        personMap.put(1111, new Person("Robert", Employer.Visma, "Timisoara"));
+        personMap.put(1111, new Person("Robert", Employer.VISMA, "Timisoara"));
 
         // change value for existing key
-        personMap.put(7, new Person("NEW", Employer.Consignor, "Timisoara"));
+        personMap.put(7, new Person("NEW", Employer.CONSIGNOR, "Timisoara"));
 
         System.out.println("Map size: " + personMap.size());
         //System.out.println("Map: " + personMap);
@@ -97,7 +97,4 @@ public class MapTest {
 
         System.out.println("\nnamesMap hash: " + namesMap.hashCode());
     }
-
-
-
 }

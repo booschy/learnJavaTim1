@@ -39,12 +39,7 @@ public class AbstractTest {
 
         System.out.println(Stopable.getDefaultInfo());
 
-
         // start is a Type/Class method; it does not deen an instance
         System.out.println(VehicleAbstract.startVechicle());
-
-
     }
-
-
 }

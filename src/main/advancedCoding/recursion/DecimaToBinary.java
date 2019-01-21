@@ -24,6 +24,7 @@ import org.junit.jupiter.api.Test;
 
 public class DecimaToBinary {
 
+
     public String toBinaryString(int number) {
 
         System.out.println("CurrentNumber: " + number);

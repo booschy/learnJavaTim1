@@ -13,6 +13,7 @@ public class Calculate {
         this.numbers = numbers;
     }
 
+
     public static String info(String message) {
 
         final String infoMessage = String.format("%s%s",
@@ -52,7 +53,6 @@ public class Calculate {
                 throw new RuntimeException("wrong operation");
         }
     }
-
 
 
     public float sum(List<Integer> numbers) {

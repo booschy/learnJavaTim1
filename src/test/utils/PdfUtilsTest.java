@@ -66,7 +66,7 @@ public class PdfUtilsTest {
     private String getPdfResourcePath(String fileName){
 
         return FileUtils.getLocalPath(
-                "Resource",
+                "RESOURCE",
                 "advancedCoding",
                 "pdf",
                 fileName

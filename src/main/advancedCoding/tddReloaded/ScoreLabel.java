@@ -18,6 +18,7 @@ score < 20: ROOKIE
  */
 public class ScoreLabel {
 
+
     public Label getLabel(int score){
 
         if(score < 0){
@@ -49,6 +50,7 @@ public class ScoreLabel {
 
         return NO_LABEL;
     }
+
 
     @Test
     public void rookie_wrong_lower_value_limit_test(){

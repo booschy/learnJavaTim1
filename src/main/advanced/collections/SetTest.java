@@ -52,9 +52,6 @@ public class SetTest {
         wordSet.removeAll(wordList);
         System.out.println("wordSet after removing wordList: " + wordSet);
 
-
-
-
     }
 
 }

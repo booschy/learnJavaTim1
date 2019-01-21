@@ -2,6 +2,7 @@ package main.advanced.lambda;
 
 public class RunTask implements Runnable {
 
+
     @Override
     public void run() {
 

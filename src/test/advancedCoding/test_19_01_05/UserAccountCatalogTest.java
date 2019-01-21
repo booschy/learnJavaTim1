@@ -45,6 +45,7 @@ public class UserAccountCatalogTest {
                 subscriptions);
     }
 
+
     @Test
     public void catalog_creation_test() {
 
@@ -54,6 +55,7 @@ public class UserAccountCatalogTest {
                 true,
                 isUserAccountCatalogEmpty);
     }
+
 
     @Nested
     class AddUserAccountTest {
@@ -95,6 +97,7 @@ public class UserAccountCatalogTest {
 
     }
 
+
     @Nested
     class ContainsTest{
 
@@ -116,8 +119,10 @@ public class UserAccountCatalogTest {
         }
     }
 
+
     @Nested
     class FindTest{
+
 
         @Test
         public void positive_test() throws AddUserAccountException, FindUserAccountException {
@@ -127,6 +132,7 @@ public class UserAccountCatalogTest {
                     userAccount,
                     userAccountCatalog.find(userAccount));
         }
+
 
         @Test
         public void negative_test(){

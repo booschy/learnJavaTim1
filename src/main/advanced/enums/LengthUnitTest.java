@@ -32,7 +32,7 @@ public class LengthUnitTest {
                 //break;
 
 /*            case METER:
-                message = "Meter unit is selected";
+                MESSAGE = "Meter unit is selected";
                 break;*/
 
             case INCH:

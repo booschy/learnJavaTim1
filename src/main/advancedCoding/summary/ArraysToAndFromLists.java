@@ -48,6 +48,7 @@ public class ArraysToAndFromLists {
         System.out.println(integers);
     }
 
+
     @Test
     public void primitive_array_to_list_wrong_test(){
         int[] intArray = new int[]{
@@ -82,6 +83,7 @@ public class ArraysToAndFromLists {
         System.out.println("integers: " + Arrays.toString(integers));
         System.out.println("integers as list: " + Arrays.asList(integers));
     }
+
 
     @Test
     public void primitive_array_to_list_test(){
@@ -126,9 +128,11 @@ public class ArraysToAndFromLists {
         System.out.println(Arrays.toString(integerArray));
     }
 
+
     public static Integer[] getIntegerArrayFromList(List<Integer> integers) {
         return integers.toArray(new Integer[integers.size()]);
     }
+
 
     @Test
     public void list_stream_to_array_test(){
@@ -154,6 +158,7 @@ public class ArraysToAndFromLists {
         System.out.println(intArray);
         System.out.println(Arrays.toString(intArray));
     }
+
 
     public static int[] getIntArrayFromList(List<Integer> integers) {
         return integers.stream()

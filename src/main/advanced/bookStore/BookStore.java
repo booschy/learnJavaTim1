@@ -31,6 +31,7 @@ public class BookStore {
         this.quantityMap = quantityMap;
     }
 
+
     public BookStore() {
 
         this(
@@ -99,6 +100,7 @@ public class BookStore {
         return quantity;
     }
 
+
     public String getBookId(Book currentBook) {
 
         List<String> books = bookMap.entrySet().stream()
@@ -156,6 +158,7 @@ public class BookStore {
         //TODO unit test
     }
 
+
     public Predicate<String> bookLineIsNotCommented = bookLine ->
             false == bookLine.startsWith("//");
 
@@ -199,6 +202,7 @@ public class BookStore {
                 .collect(Collectors.joining("\n"));
     }
 
+
     public Function<String, String> keyToBookInfoString = key ->
 
             String.format("%s %s | quantity: %d",
@@ -225,6 +229,7 @@ public class BookStore {
                 .collect(toList());
     }
 
+
     public List<BookInfo> searchBookByAuthor(String bookAuthor) {
 
         final Function<Book, BookInfo> bookToBookInfo = book ->
@@ -249,10 +254,12 @@ public class BookStore {
                 .collect(toList());
     }
 
+
     public List<BookInfo> searchBookByGenre(BookGenre bookGenre) {
         //TODO - HOMEWORK + UNITTEST
         return new ArrayList<>();
     }
+
 
     public List<BookInfo> searchBookByNameAndAuthor(
             String bookName,
@@ -274,6 +281,7 @@ public class BookStore {
                 .collect(toList());
     }
 
+
     public List<BookInfo> searchBookByCheaperPrice(float topPrice) {
 
         final Predicate<String> priceCheaperThanTopPrice = key ->
@@ -289,12 +297,14 @@ public class BookStore {
 
     }
 
+
     public List<Book> getCheapestBooks() {
 
         return bookMap.values().stream()
                 .filter(book -> book.getPrice() == getMinPrice())
                 .collect(toList());
     }
+
 
     private float getMinPrice() {
 
@@ -336,11 +346,13 @@ public class BookStore {
         return quantitiesIntStream.min().orElse(0);
     }
 
+
     private boolean isStoreEmpty() {
 
         return quantityMap.size() == 0
                 && bookMap.size() == 0;
     }
+
 
     public int getTotalBooksQuantity(){
 
@@ -377,6 +389,7 @@ public class BookStore {
         // TODO implement
         return Collections.emptyMap();
     }
+
 
     public Map<BookGenre, Float> getPriceByGenreMap() {
         // TODO implement
