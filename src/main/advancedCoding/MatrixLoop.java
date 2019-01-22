@@ -1,9 +1,8 @@
 package main.advancedCoding;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import org.junit.jupiter.api.Test;
+
+import java.util.*;
 import java.util.function.Consumer;
 
 public class MatrixLoop {
@@ -31,21 +30,22 @@ public class MatrixLoop {
                 new int[]{5}//row 2
         };
 
+
+
+        // the next line will throw ArrayIndexOutOfBoundsException for column index 1
+        //System.out.println(intMatrix[2][1]); // uncomment to test it
+
+        // use row.length instead of hardcoded value to avoid ArrayIndexOutOfBoundsException
         for (int i = 0; i < intMatrix.length; i++) {
+            System.out.println("Row " + i + "length: " + intMatrix[i].length);
             for (int j = 0; j < intMatrix[i].length; j++) {
                 System.out.print("\"" + intMatrix[i][j] + "\" ");
             }
             System.out.println();
         }
 
-        /*int[][] intMatrix1 = {
-                {1, 1, 1},
-                {2, 2, 2},
-                {5, 5, 5}
-        };*/
 
 
-        //printMatrix(intMatrix, integer -> System.out.print(integer + " "));
         matrixOperation(
                 intMatrix,
                 integer -> System.out.print(integer*2 + " "));
@@ -100,4 +100,29 @@ public class MatrixLoop {
             }
         }
     }
+
+
+    @Test
+    public void other_matrix__test(){
+        int[][] intMatrix = {
+                {1, 1, 1},
+                {2, 2, 2},
+                {5, 5, 5}
+        };
+
+        // print all elements from the array
+        matrixOperation(
+                intMatrix,
+                integer -> System.out.print(integer + " "));
+
+        System.out.println();
+
+        // streaming a two dimensional array of primitives; same result as above, different iteration
+        Arrays.stream(intMatrix) // IntStream
+                .map(row -> Arrays.stream(row)) // stream of IntStream
+                //.map(Arrays::stream) // same as above with method reference
+                .flatMapToInt(i -> i) // IntStream
+                .forEach(integer -> System.out.print(integer + " "));
+    }
+
 }
