@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 import java.util.function.Consumer;
+import java.util.function.Function;
 
 public class MatrixLoop {
 
@@ -118,11 +119,11 @@ public class MatrixLoop {
         System.out.println();
 
         // streaming a two dimensional array of primitives; same result as above, different iteration
-        Arrays.stream(intMatrix) // IntStream
+        Arrays.stream(intMatrix) // stream of int[]
                 .map(row -> Arrays.stream(row)) // stream of IntStream
                 //.map(Arrays::stream) // same as above with method reference
                 .flatMapToInt(i -> i) // IntStream
+                //.flatMapToInt(Function.identity())
                 .forEach(integer -> System.out.print(integer + " "));
     }
-
 }
