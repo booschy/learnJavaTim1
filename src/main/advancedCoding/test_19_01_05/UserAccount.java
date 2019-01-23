@@ -1,6 +1,7 @@
 package main.advancedCoding.test_19_01_05;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.stream.Collectors;
@@ -81,20 +82,29 @@ public final class UserAccount {
 
 
     @Override
+    // If two objects are equal by equals() method
+    // then there hashcode returned by hashCode() method must be same.
     public boolean equals(Object other) {
+
         // common part to all equals implementations
+        if (this == other) return true;
+
         if (other == null) return false;
         if (!(other instanceof UserAccount))return false;
-
-        if (this == other) return true;
         // end common part
 
         final UserAccount otherUserAccount = (UserAccount) other;
-        if (this.email.equals(otherUserAccount.email)) {
-            return true;
-        }
 
-        return false;
+        return Objects.equals(
+                this.email,
+                otherUserAccount.email);
+    }
+
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(this.email);
     }
 
 

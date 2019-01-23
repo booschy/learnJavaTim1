@@ -1,5 +1,7 @@
 package main.advanced.bookStore;
 
+import java.util.Objects;
+
 public class BookInfo {
 
     Book book;
@@ -23,13 +25,32 @@ public class BookInfo {
 
 
     @Override
-    public boolean equals(Object otherBookInfoObj) {
+    // If two objects are equal by equals() method
+    // then there hashcode returned by hashCode() method must be same.
+    public boolean equals(Object other) {
 
-        final BookInfo otherBookInfo = (BookInfo) otherBookInfoObj;
+        // common part to all equals implementations
+        if (this == other) return true;
 
-        return this.book.equals(otherBookInfo.getBook())
+        if (other == null) return false;
+        if (!(other instanceof Book))return false;
+        // end common part
 
-                && (this.quantity == otherBookInfo.getQuantity());
+
+        final BookInfo otherBookInfo = (BookInfo) other;
+
+        return Objects.equals(this.book, otherBookInfo.book)
+
+                && Objects.equals(this.quantity, otherBookInfo.quantity);
+    }
+
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(
+                this.book,
+                this.quantity);
     }
 
 
