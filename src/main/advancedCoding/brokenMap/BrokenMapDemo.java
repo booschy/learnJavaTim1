@@ -22,7 +22,6 @@ public class BrokenMapDemo {
         System.out.println("Map contains key " + person + " : " + ageByPersonMap.containsKey(person));
         System.out.println("Initial age from map: " + ageByPersonMap.get(person));
 
-
         System.out.println("-----------------------");
 
         String newName = "Jane";
@@ -33,8 +32,7 @@ public class BrokenMapDemo {
         System.out.println("Person name: " + person.getName());
         System.out.println("Map: " + ageByPersonMap);
         System.out.println("Map contains key " + person + " : " + ageByPersonMap.containsKey(person));
-        // the following line result is due to internal HashMap implementation
+        // the following line result is due to internal HashMap implementation + hashcode override
         System.out.println("Age from map: " + ageByPersonMap.get(person));
-
     }
 }
