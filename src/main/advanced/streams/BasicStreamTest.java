@@ -30,7 +30,6 @@ public class BasicStreamTest {
     final public Predicate<Person> isPersonFromIbm =
             p -> p.getEmployer().equals(Employer.IBM);
 
-
     @BeforeEach
     public void before() throws IOException {
 
@@ -38,7 +37,6 @@ public class BasicStreamTest {
                 "RESOURCE\\FUNDAMENTALS\\BANK\\employees.csv");
 
     }
-
 
     @Test
     public void test_stream_filter_fromTm_expanded() {
@@ -54,7 +52,6 @@ public class BasicStreamTest {
         //employeesFromTmList.forEach(System.out::println);
         employeesFromTmList.forEach( p -> { System.out.println(p); });
     }
-
 
     @Test
     public void test_stream_filter_fromTm_short() {
@@ -76,17 +73,14 @@ public class BasicStreamTest {
                 .forEach(System.out::println);
     }
 
-
     public boolean isPersonFromTown(Person person, String town){
 
         return person.getLocation().equals(town);
     }
 
-
     public boolean isPersonFromTimisoara(Person person){
         return isPersonFromTown(person, "Timisoara");
     }
-
 
     @Test
     public void test_stream_filter_and_count(){
@@ -102,7 +96,6 @@ public class BasicStreamTest {
         System.out.println("employeesFromVismaTimisoaraCount: " + employeesFromTimisoaraCount);
 
     }
-
 
     @Test
     public void test_names_from_IBM_Timisoara(){
@@ -123,7 +116,6 @@ public class BasicStreamTest {
 
         System.out.println("namesFromIBMTimisoara: " + namesFromIBMTimisoara);
     }
-
 
     @Test
     public void test_concatenate_streams(){
@@ -173,8 +165,7 @@ public class BasicStreamTest {
 
         System.out.println(allNumbersList);
 
-
-        Set<Integer> allNumbersSet = Stream.of(
+        Set<Integer> uniqueNumbers = Stream.of(
                 numbers1.stream(),
                 numbers2.stream(),
                 numbers3.stream())
@@ -183,15 +174,8 @@ public class BasicStreamTest {
 
                 .collect(Collectors.toSet());
 
-        System.out.println(allNumbersSet);
-
+        System.out.println(uniqueNumbers);
     }
-
-
-
-
-
-
 }
 
 
